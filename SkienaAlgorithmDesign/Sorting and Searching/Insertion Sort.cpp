@@ -6,7 +6,7 @@
 	Space Complexity: O(1)
 */
 
-insertion_sort(int s[], int n)
+void insertion_sort(int s[], int n)
 {
 	int i, j;
 	for (i = 1; i < n i++)

@@ -6,7 +6,7 @@
 	Space Complexity: O(1)
 */
 
-selection_sort(int s[], int n)
+void selection_sort(int s[], int n)
 {
 	int i, j;
 	int min;
