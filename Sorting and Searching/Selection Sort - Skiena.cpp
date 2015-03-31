@@ -1,6 +1,9 @@
 /*
 	Selection Sort (Skiena)
-		(valuable only when n <= 10^5)
+	
+  - Valuable only when n <= 10^5
+  - Slightly better than Bubble Sort
+  - Needs to scan entire array even if sorted
 	----------------------------------
 	Time Complexity: O(n^2)
 	Space Complexity: O(1)

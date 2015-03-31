@@ -1,9 +1,14 @@
 /*
 	Quick Sort (Skiena)
-		(valuable for big n, <= 10^9)
+  
+	- Valuable for big n, <= 10^9
+  - Randomly pick pivot can help avoid worst case: sorted array
+  - Hoare better than Lomuto partition
 	----------------------------------
-	Time Complexity: O(nlogn)
-	Space Complexity: O(?)
+	Time Complexity: O(n*log(n))
+	Space Complexity: O(1)
+  
+  
 		
 */
 

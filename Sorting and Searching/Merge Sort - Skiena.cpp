@@ -1,12 +1,12 @@
 /*
 	Merge Sort (Skiena)
-		(valuable for big n, <= 10^9)
-	----------------------------------
-	Time Complexity: O(nlogn)
-	Space Complexity: O(?)
 	
-	* Great for sorting linked lists
-	* Disadvantage that buffer is needed
+	- Valuable for big n, <= 10^9
+	- Great for sorting linked lists
+	- Disadvantage that buffer is needed
+	----------------------------------
+	Time Complexity: O(n*log(n))
+	Space Complexity: O(n)->array, O(1)->linked list
 	
 */
 

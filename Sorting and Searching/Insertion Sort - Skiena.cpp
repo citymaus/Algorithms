@@ -1,6 +1,8 @@
 /*
 	Insertion Sort (Skiena)
-		(valuable only when n <= 10^5)
+	
+  - valuable only when n <= 10^5
+  - Slightly better than Bubble Sort
 	----------------------------------
 	Time Complexity: O(n^2)
 	Space Complexity: O(1)
