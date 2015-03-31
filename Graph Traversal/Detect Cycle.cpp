@@ -1,5 +1,5 @@
 /*
-	Floyd's Algorithms to detect a cycle
+	Floyd's Algorithm to detect a cycle
 	http://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare
 	
 		*Singly linked list
