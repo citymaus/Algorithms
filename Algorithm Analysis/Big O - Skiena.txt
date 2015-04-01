@@ -1,5 +1,4 @@
-
-/* Big O 
+Big O Notation vs. Runtime
 
 us = microseconds
 ms = milliseconds
@@ -10,7 +9,6 @@ y  = years
 
 * impractical algorithm
 
-*/
 
 n f(n)            lg n            n        n lg n        n^2            2^n                n!
 ----------------------------------------------------------------------------------------------
