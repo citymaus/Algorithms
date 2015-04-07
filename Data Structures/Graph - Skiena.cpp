@@ -1,20 +1,20 @@
 #define MAXV		1000	/* maximum number of vertices */
 
-typedef struct {
+struct edgenode {
 	int y;					/* adjacency info */
 	int weight;				/* edge weight, if any */
 	struct edgenode *next;	/* next edge in list */
-} edgenode;
+};
 
-typedef struct {
+struct graph {
 	edgenode *edges[MAXV+1];	/* adjacency info */
 	int degree[MAXV+1];			/* outdegree of each vertex */
 	int nvertices;				/* number of vertices in graph */
 	int nedges;					/* number of edges in graph */
 	bool directed;				/* is teh graph directed? */
-} graph;
+};
 
-initialize_graph(graph *g, bool directed)
+void initialize_graph(graph *g, bool directed)
 {
 	int i;		/* counter */
 	
@@ -26,7 +26,7 @@ initialize_graph(graph *g, bool directed)
 	for (i = 1; i <= MAXV; i++) g->edges[i] = NULL;
 }
 
-read_graph(graph *g, bool directed)
+void read_graph(graph *g, bool directed)
 {
 	int i;					/* counter */
 	int m;					/* number of edges */
@@ -42,32 +42,33 @@ read_graph(graph *g, bool directed)
 	}
 }
 
-insert_edge(graph *g, int x, int y, bool directed)
+void insert_edge(graph *g, int x, int y, bool directed)
 {
 	edgenode *p;					/* temporary pointer */
 	
 	p = malloc(sizeof(edgenode));	/*allocate edgenode storage */
 	
 	p->weight = NULL;
-	p=>y = y;
+	p->y = y;
 	p->next = g->edges[x];
 	
 	g->edges[x] = p;				/* insert at head of list */
 	g->degree[x]++;
 	
-	if (drected == FALSE) {
+	if (directed == FALSE) {
 		insert_edge(g, y, x, TRUE);
 	} else {
 		g->nedges++;
 	}
 }
 
-print_graph(graph *g)
+void print_graph(graph *g)
 {
 	int i;
 	edgenode *p;
 	
-	for (i = 1; i <=g->nvertices; i++) 
+  printf("vertex: [vertices connected]\n");
+	for (i = 1; i <= g->nvertices; i++) 
 	{
 		printf("%d: ", i);
 		p = g->edges[i];
@@ -84,7 +85,7 @@ bool processed[MAXV+1];		/* which vertices have been processed */
 bool discovered[MAXV+1];	/* which vertices have been found */
 int parent[MAXV+1];			/* discovery relation */
 
-initialize_search(graph *g)
+void initialize_search(graph *g)
 {
 	int i;					/* counter */
 	
@@ -95,7 +96,7 @@ initialize_search(graph *g)
 	}
 }
 
-breadth_first_search(graph *g, int start)
+void breadth_first_search(graph *g, int start)
 {
 	queue q;				/* queue of vertices to visit */
 	int v; 					/* current vertex */
@@ -131,22 +132,22 @@ breadth_first_search(graph *g, int start)
 	}
 }
 
-process_vertex_late(int v)
+void process_vertex_late(int v)
 {
 }
 
-process_vertex_early(int v)
+void process_vertex_early(int v)
 {
 	printf("rpocessed vertex %d\n", v);
 }
 
-process_edge(int x, int y)
+void process_edge(int x, int y)
 {
 	printf("processed edge (%d, %d)\n", x, y);
 	nedges = nedges + 1;				/* get an accurate count of number of edges */
 }
 
-find_path(int start, int end, int parents[])
+void find_path(int start, int end, int parents[])
 {
 	if ((start == end) || (end == -1))
 	{
@@ -159,7 +160,7 @@ find_path(int start, int end, int parents[])
 	}
 }
 
-depth_first_search(graph *g, int v)
+void depth_first_search(graph *g, int v)
 {
 	edgenode *p;			/* temporary pointer */
 	int y;					/* successor vertex */
