@@ -16,16 +16,17 @@ int main() {
 	int start_s=clock();
 
 	// Change these based on challenge.
-#define current_level Search
-#define current_test  sherlock_and_pairs
 	string category = "strings";
-	string testname = "rotate"; //"flipping_bits"; //"the_love_letter";
+	string testname = "setzero";
 	string testinput = category + "-" + testname + ".txt";
 	FileHandler* filereader = new FileHandler(testinput);
 
 #define   ARRAY_INPUT
 #undef    LINE_INPUT
 #undef    VECTOR_INPUT
+
+#define   ARRAY_OUTPUT
+#undef    VAR_OUTPUT
 
   int n;
 	int r;
@@ -54,16 +55,25 @@ int main() {
   }
 #endif
 
-	cout << "INPUT:" << endl;
+  //--------------------------------------------------
+  // PRINT INPUT
+  //--------------------------------------------------
+	cout << endl << "INPUT:" << endl;
 #ifdef ARRAY_INPUT
   print_array(arr, n);
 #endif
   
+  //--------------------------------------------------
   // Current solution function
-  rotate_image(arr, n);
+  //--------------------------------------------------
+  set_zeros(arr, n);
 
-	cout << "OUTPUT:" << endl;
-#ifdef ARRAY_INPUT
+  
+  //--------------------------------------------------
+  // PRINT OUTPUT
+  //--------------------------------------------------
+	cout << endl << "OUTPUT:" << endl;
+#ifdef ARRAY_OUTPUT
   print_array(arr, n);
 #endif
 
@@ -95,11 +105,11 @@ int main() {
         pairs = current_level::current_test(v);
         cout << pairs << endl;
 	}
-	//current_level::current_test(outrow, 0, n-1);
-	//current_level::current_test(countme, thestrings);
-	*/
+  */
+
+  // End tests
 	int stop_s=clock();
 	cout << endl << "time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << "sec" << endl;
 	system("pause");
-    return 0;
+  return 0;
 }
