@@ -31,7 +31,7 @@ Node* RemoveDuplicatesFromSorted(Node *head)
 // O(n*lg(n))
 Node* RemoveDuplicatesFromUnsorted(Node *head)
 {
-  // MergeSort to sort linked list.
+  // MergeSort to sort linked list, O(1) space needed for linked lists.
   head = MergeSort(head);
   Node* curr = head;
   int prev = -1;
