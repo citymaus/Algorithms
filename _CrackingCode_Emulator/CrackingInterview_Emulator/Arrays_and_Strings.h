@@ -6,3 +6,4 @@ string replace_spaces(string s);
 string compression(string s);
 void rotate_image(int arr[][100], int N);
 void set_zeros(int arr[][100], int N);
+string is_rotation(string s1, string s2);

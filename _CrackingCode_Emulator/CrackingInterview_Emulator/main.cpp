@@ -17,22 +17,23 @@ int main() {
 
 	// Change these based on challenge.
 	string category = "strings";
-	string testname = "setzero";
+	string testname = "rotatestr";
 	string testinput = category + "-" + testname + ".txt";
 	FileHandler* filereader = new FileHandler(testinput);
 
-#define   ARRAY_INPUT
+#undef    ARRAY_INPUT
+#define   STRING_INPUT
 #undef    LINE_INPUT
 #undef    VECTOR_INPUT
 
-#define   ARRAY_OUTPUT
-#undef    VAR_OUTPUT
+#undef   ARRAY_OUTPUT
+#define    VAR_OUTPUT
 
   int n;
 	int r;
 	int t;
 	int pairs;
-	string s;
+	string s1, s2, result;
   cin >> n;
 
 #ifdef LINE_INPUT
@@ -54,6 +55,9 @@ int main() {
     }
   }
 #endif
+#ifdef STRING_INPUT
+  cin >> s1 >> s2;
+#endif
 
   //--------------------------------------------------
   // PRINT INPUT
@@ -62,11 +66,14 @@ int main() {
 #ifdef ARRAY_INPUT
   print_array(arr, n);
 #endif
+#ifdef STRING_INPUT
+  cout << s1 << " " << s2 << endl;
+#endif
   
   //--------------------------------------------------
   // Current solution function
   //--------------------------------------------------
-  set_zeros(arr, n);
+  result = is_rotation(s1, s2);
 
   
   //--------------------------------------------------
@@ -75,6 +82,9 @@ int main() {
 	cout << endl << "OUTPUT:" << endl;
 #ifdef ARRAY_OUTPUT
   print_array(arr, n);
+#endif
+#ifdef VAR_OUTPUT
+  cout << result << endl;
 #endif
 
 	//cout << rotate_image(arr, n) << endl;
