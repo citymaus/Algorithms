@@ -6,7 +6,7 @@
 #include <string>
 #include <ctime>
 #include "file_handler.h"
-#include "Strings.h"
+#include "Arrays_and_Strings.h"
 using namespace std;
 
 
@@ -19,19 +19,55 @@ int main() {
 #define current_level Search
 #define current_test  sherlock_and_pairs
 	string category = "strings";
-	string testname = "compression"; //"flipping_bits"; //"the_love_letter";
+	string testname = "rotate"; //"flipping_bits"; //"the_love_letter";
 	string testinput = category + "-" + testname + ".txt";
 	FileHandler* filereader = new FileHandler(testinput);
 
-    int n;
+#define   ARRAY_INPUT
+#undef    LINE_INPUT
+#undef    VECTOR_INPUT
+
+  int n;
 	int r;
 	int t;
 	int pairs;
 	string s;
+  cin >> n;
+
+#ifdef LINE_INPUT
+  // Grab line input
 	getline(cin, s);
-	cout << "INPUT:" << endl << s << endl << endl;
+#endif
+#ifdef ARRAY_INPUT
+  
+  int arr[100][100];
+  memset(arr, 0, sizeof(arr));
+
+  // Grab array input
+  for (int x = 0; x < n; x++)
+  {
+    for (int y = 0; y < n; y++)
+    {
+      cin >> r;
+      arr[x][y] = r;
+    }
+  }
+#endif
+
+	cout << "INPUT:" << endl;
+#ifdef ARRAY_INPUT
+  print_array(arr, n);
+#endif
+  
+  // Current solution function
+  rotate_image(arr, n);
+
 	cout << "OUTPUT:" << endl;
-	cout << compression(s) << endl;
+#ifdef ARRAY_INPUT
+  print_array(arr, n);
+#endif
+
+	//cout << rotate_image(arr, n) << endl;
 //    string row, s;
     //unsigned int input;
 	//unsigned int opers;
