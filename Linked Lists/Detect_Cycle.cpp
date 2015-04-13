@@ -9,24 +9,37 @@
   }
 */
 
-int HasCycle(Node* head)
+Node * BeginningOfCycle(Node* head)
 {
    // Complete this function
    // Do not write the main method
     Node* tortoise = head;
     Node* hare = head;
-    if (head != NULL)
+    while (tortoise && hare && hare->next)
     {
-        while (tortoise && hare && hare->next)
+        tortoise = tortoise->next;
+        hare = hare->next->next;
+        if (tortoise == hare)
         {
-            tortoise = tortoise->next;
-            hare = hare->next->next;
-            if (tortoise == hare)
-            {
-                return 1;    
-            }
+            break;
         }
     }
+
+    /* Error check - no meeting point, and therefore no loop */
+    if (hare == null || hare->next == null) {
+      return null;
+    }
+
+    /* Move tortoise to Head. Keep hare at Meeting Point. Each are k
+    * steps from the Loop Start. If they move at the same pace,
+    * they must meet at Loop Start. */
+    tortoise = head;
+    while (tortoise != hare) {
+      tortoise = tortoise->next;
+      hare = hare->next;
+    }
+
+    /* Both now point to the start of the loop. */
+    return hare;
         
-    return 0;
 }
