@@ -11,7 +11,7 @@ struct graph {
 	int degree[MAXV+1];			/* outdegree of each vertex */
 	int nvertices;				/* number of vertices in graph */
 	int nedges;					/* number of edges in graph */
-	bool directed;				/* is teh graph directed? */
+	bool directed;				/* is the graph directed? */
 };
 
 /* 
