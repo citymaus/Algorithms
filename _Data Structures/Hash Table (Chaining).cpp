@@ -109,6 +109,7 @@ public:
  
       ~HashMap() {
             for (int i = 0; i < TABLE_SIZE; i++)
+            {
                   if (table[i] != NULL) {
                         LinkedHashEntry *prevEntry = NULL;
                         LinkedHashEntry *entry = table[i];
@@ -118,6 +119,7 @@ public:
                              delete prevEntry;
                         }
                   }
+            }
             delete[] table;
       }
 };

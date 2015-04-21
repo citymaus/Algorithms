@@ -25,6 +25,7 @@ using namespace std;
     printf ("Enter your family name: ");
     scanf ("%79s",str); 
   NULL;
+
 /* <cstring>   (string.h)    C Strings (header) */
   memset(ptr obj, int value, sizeof(obj));      /* <------------------------------ */
   size_t strlen(const char *str);
@@ -46,6 +47,7 @@ using namespace std;
       pch = strtok (NULL, " ,.-");
     }
   NULL;
+
 /* <cmath>     (math.h)      C numerics library (header) */
   double exp(double x) = e^x;
   double log(double x) = log base e(x);
@@ -57,9 +59,15 @@ using namespace std;
   double abs(double x) = absolute value of x, |x|;
   INFINITY = math constant;
   NAN = not a number;
+
+/* <algorithm>     ()      C algorithm library (header) */
+  double max(double x, double y);
+  double min(double x, double y);
+
 /* <climits>   (limits.h)    Sizes of integral types (header) */
   INT_MAX || UINT_MAX || LONG_MAX || ULONG_MAX || ULLONG_MAX;
   INT_MIN, etc.;
+
 /* <cctype>    (ctype.h)     Character handling functions (header) */
   int isupper(char c) = 1 if uppercase;
   int islower(char c) = 1 if lowercase;
@@ -68,7 +76,8 @@ using namespace std;
   int isdigit(char c) = 1 if digit[0-9];
   int iscntrl(char c) = 1 if \n, \t, etc.;
   int isprint(char c) = 1 if character is printable;
-<ctime>     (time.h)      C Time Library (header)
+
+/* <ctime>     (time.h)      C Time Library (header) */
   time_t time (time_t* timer);
   double difftime (time_t end, time_t beginning);
     time_t now;
@@ -127,6 +136,7 @@ LESS COMMON:
   OUTPUT
     myset contains: 10 20 30
   */
+
 #include <list>           // (Linked) List header
   std::list<int> myints;
   std::cout << "0. size: " << myints.size() << '\n';
@@ -146,6 +156,7 @@ LESS COMMON:
     3. size: 19
     4. isempty:true
   */
+
 #include <vector>         // Vector header
   // dynamic arrays, might need resizing, fast to access, but can be slow to insert
   std::vector<int> myints;
@@ -163,6 +174,7 @@ LESS COMMON:
     2. size: 20
     3. size: 19
   */
+
 #include <queue>          // Queue header: FIFO queue, priority queue
   empty() 
   size()
@@ -220,6 +232,7 @@ LESS COMMON:
   OUTPUT:
     Popping out elements... 4 3 2 1 0
   */
+
 #include <map>            // (Hash?) Map header, typically binary search tree
   std::map<char, int> mymap;
   mymap['a']=10;
