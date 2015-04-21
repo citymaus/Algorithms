@@ -26,7 +26,7 @@ using namespace std;
     scanf ("%79s",str); 
   NULL;
 /* <cstring>   (string.h)    C Strings (header) */
-  memset(ptr obj, int value, sizeof(obj));
+  memset(ptr obj, int value, sizeof(obj));      /* <------------------------------ */
   size_t strlen(const char *str);
     char szInput[256];
     strlen(szInput);
