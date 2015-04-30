@@ -10,13 +10,14 @@
 
   Min is always top of stack 2.
 ------------------------*/
+#include<stack>
 
 stack<int> all;
 stack<int> min;
 
 void push(int element)
 {
-  if (min.isEmpty() || (min.peek() > x)
+  if (min.empty() || (min.top() > x)
   {
     min.push(x);
   }
@@ -25,7 +26,7 @@ void push(int element)
 
 void pop()
 {
-  if (min.peek() == all.peek())
+  if (min.top() == all.top())
   {
     min.pop();
   }
