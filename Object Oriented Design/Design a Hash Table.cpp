@@ -93,7 +93,7 @@ template <class K_Type, class V_Type> class Cell
 
     bool equivalent(Cell<K_Type, V_Type> c) 
     {
-      return equivalence.getKey(c.getKey());
+      return equivalent.getKey(c.getKey());
     }
 
     bool equivalent(K_Type k) 

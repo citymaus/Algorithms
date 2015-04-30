@@ -32,3 +32,8 @@ void pop()
   }
   all.pop();
 }
+
+int get_min()
+{
+	return min.top();
+}

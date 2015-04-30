@@ -1,0 +1,10 @@
+
+Priority Queues (Heap) - Skiena
+
+    - FIFO
+    
+                      Array           Array         Balanced
+Operations          (unsorted)      (sorted)        Tree
+-------------------------------------------------------------
+Insert(Q, x)
+Find-Minimum(Q)*
