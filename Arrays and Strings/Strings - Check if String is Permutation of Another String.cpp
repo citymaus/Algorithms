@@ -11,35 +11,50 @@
   In the end if the two strings are permutations of each other, you will end up with a HashMap with all values 0:
 
 ------------------------*/
+#include <cstdio>
+#include <string>
+#include <map>
+using namespace std;
 
-boolean arePermutations(string str1, string str2) 
+bool arePermutations(string str1, string str2) 
 {
-    if (strlen(str1) != strlen(str2)) {
+    if (str1.length() != str2.length()) 
+	{
         return false;
     }
-    HashMap hashMapChars = new HashMap();
+    map<char, int> hashMapChars;
 
     // enter the chars and the number of times each of them appears
-    for (int i = 0; i < str1.length(); i++) {
-        if (hashMapChars.containsKey(str1.charAt(i))) {
-            int count = hashMapChars.get(str1.charAt(i));
-            hashMapChars.put(str1.charAt(i), count + 1);
-        } else {
-            hashMapChars.put(str1.charAt(i), 1);   }
-        }
+    for (int i = 0; i < str1.length(); i++) 
+	{
+		map<char, int>::iterator it = hashMapChars.find(str1[i]);
+        if (it != hashMapChars.end()) 
+		{
+            it->second += 1;
+        } 
+		else 
+		{
+            hashMapChars.insert(make_pair(str1[i], 1));   
+		}
     }
     // for each char in str2 decrease the value number
-    for (int i = 0; i < str2.length(); i++) {
-        if (hashMapChars.containsKey(str2.charAt(i))) {
-            int count = hashMapChars.get(str2.charAt(i));
+    for (int i = 0; i < str2.length(); i++) 
+	{
+		map<char, int>::iterator it = hashMapChars.find(str2[i]);
+        if (it != hashMapChars.end()) 
+		{
+			int count = it->second;
             count--;
-            if (count < 0) {
+            if (count < 0) 
+			{
                 return false;
             }
-            hashMapChars.put(str2.charAt(i), count);
-            } else {
+            it->second = count;
+        } 
+		else 
+		{
                 return false;
-            }
         }
-        return true;
+    }
+    return true;
 }

@@ -3,7 +3,7 @@
 //Common includes
 #include <iostream>
 #include <fstream>
-#include <math>
+#include <cmath>
 #include <cctype>
 #include <string>
 
