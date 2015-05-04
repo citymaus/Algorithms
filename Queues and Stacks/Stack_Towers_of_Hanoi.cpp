@@ -3,61 +3,77 @@ In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of
 different sizes which can slide onto any tower. The puzzle starts with disks sorted
 in ascending order of size from top to bottom (i.e., each disk sits on top of an even
 larger one). You have the following constraints:
-(T) Only one disk can be moved at a time.
+(1) Only one disk can be moved at a time.
 (2) A disk is slid off the top of one tower onto the next rod.
 (3) A disk can only be placed on top of a larger disk.
 Write a program to move the disks from the first tower to the last using Stacks.
 */
 
-public static void main(String[] args) {
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void main(string args[]) {
   int n = 3;
-  Tower[] towers = new Tower[n];
+  Tower towers[3];
   for (int i = 0; i < 3; i++) {
-    towers[i] = new Tower(i);
+      towers[i].setI(i);
   }
   for (int i = n - 1; i >= 0; i--) {
     towers[0].add(i);
   }
-  towers[0].moveDisks(n, towers[2], towers[l]);
+  towers[0].moveDisks(n, towers[2], towers[1]);
 }
 
-public class Tower {
-  private Stack<int> disks;
-  private int index;
+class Tower {
+private:
+    stack<int> disks;
+    int ind;
   
-  public Tower(int i) {
-    disks = new Stack<int>();
-    index = i;
-  }
-
-  public int index() {
-    return index;
-  }
-
-  public void add(int d) {
-    if (!disks.isEmpty() && disks.peek() <= d) 
+public:
+    Tower()
     {
-      cout << "Error placing disk " << d;
-    } 
-    else 
-    {
-      disks.push(d);
     }
-  }
 
-  public void moveTopTo(Tower t) {
-    int top = disks.pop();
-    t.add(top);
-    cout << "Move disk " << top << " from " << index() << " to " << t.index();
-  }
-
-  public void moveDisks(int n. Tower destination. Tower buffer) {
-    if (n > 0) 
+    void setI(int i)
     {
-      moveDisks(n - 1, buffer, destination);
-      moveTopTo(destination);
-      buffer.moveDisks(n - l, destination, this);
+        ind = i;
     }
-  }
-}
 
+    int index() 
+    {
+        return ind;
+    }
+
+    void add(int d) 
+    {
+        if (!disks.empty() && disks.top() <= d) 
+        {
+            cout << "Error placing disk " << d;
+        } 
+        else 
+        {
+            disks.push(d);
+        }
+    }
+
+    void moveTopTo(Tower t) 
+    {
+        int top = disks.top();
+        disks.pop();
+        t.add(top);
+        cout << "Move disk " << top << " from " << index() << " to " << t.index();
+    }
+
+    void moveDisks(int n, Tower destination, Tower buffer) 
+    {
+        if (n > 0) 
+        {
+          moveDisks(n - 1, buffer, destination);
+          moveTopTo(destination);
+          moveDisks(n - 1, destination, buffer);
+        }
+    }
+};

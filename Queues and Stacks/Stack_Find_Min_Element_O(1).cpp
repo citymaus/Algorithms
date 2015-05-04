@@ -11,29 +11,30 @@
   Min is always top of stack 2.
 ------------------------*/
 #include<stack>
+using namespace std;
 
-stack<int> all;
-stack<int> min;
+stack<int> allstack;
+stack<int> minstack;
 
 void push(int element)
 {
-  if (min.empty() || (min.top() > x)
+  if (minstack.empty() || (minstack.top() > element))
   {
-    min.push(x);
+    minstack.push(element);
   }
-  all.push(x);
+  allstack.push(element);
 }
 
 void pop()
 {
-  if (min.top() == all.top())
+  if (minstack.top() == allstack.top())
   {
-    min.pop();
+    minstack.pop();
   }
-  all.pop();
+  allstack.pop();
 }
 
 int get_min()
 {
-	return min.top();
+	return minstack.top();
 }

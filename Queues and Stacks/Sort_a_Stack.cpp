@@ -16,15 +16,21 @@ s   r     s   r     s   r     s   r
 
 */
 
-public static Stack<int> sort(Stack<int> s) 
+#include <cstdio>
+#include <stack>
+using namespace std;
+
+stack<int> sort(stack<int> s) 
 {
-  Stack<int> r = new Stack<int>();
-  while (!s.isEmpty()) 
+  stack<int> r;
+  while (!s.empty()) 
   {
-    int tmp = s.popQ; // Step 1
-    while (Ir.isEmpty() && r.peek() > tmp) 
+    int tmp = s.top(); // Step 1
+    s.pop();
+    while (!r.empty() && r.top() > tmp) 
     { // Step 2
-      s.push(r.pop());
+      s.push(r.top());
+      r.pop();
     }
     r.push(tmp); // Step 3
   }
