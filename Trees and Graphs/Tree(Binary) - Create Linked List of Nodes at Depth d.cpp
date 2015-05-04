@@ -6,35 +6,46 @@
   Space: O(log N)
 */
 
-void createLevelLinkedList(TreeNode *root, ArrayList<LinkedList<TreeNode *>> lists, int level) 
-{
-  if (root == null) return; // base case
+#include <cstdio>
+#include <vector>
+#include <list>
+using namespace std;
 
-  LinkedList<TreeNode *> list = null;
+struct TreeNode {
+    int data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
+void createLevelLinkedList(TreeNode *root, vector<list<TreeNode *>> lists, int level) 
+{
+  if (root == NULL) return; // base case
+
+  list<TreeNode *> levellist;
   if (lists.size() == level) 
   { 
     // Level not contained in list
-    list = new LinkedList<TreeNode *>();
+    //levellist.push_back(NULL);
 
     /* Levels are always traversed in order. So., if this is the
     * first time we've visited level i, we must have seen levels
     * 0 through i - 1. We can therefore safely add the level at
     * the end. */
-    lists.add(list);
+    lists.push_back(levellist);
   } 
   else 
   {
-    list = lists.get(level);
+      levellist = lists.at(level);
   }
 
-  list.add(root);
+  levellist.push_back(root);
   createLevelLinkedList(root->left, lists, level + 1);
   createLevelLinkedList(root->right, lists, level + 1);
 }
 
-ArrayList<LinkedList<TreeNode *>> createLevelLinkedList(TreeNode *root) 
+vector<list<TreeNode *>> createLevelLinkedList(TreeNode *root) 
 {
-  ArrayList<LinkedList<TreeNode *>> lists = new ArrayList<LinkedList<TreeNode *>>();
+  vector<list<TreeNode *>> lists;
   createLevelLinkedList(root, lists, 0);
   return lists;
 }

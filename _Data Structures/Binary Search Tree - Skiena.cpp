@@ -1,4 +1,5 @@
-
+#include <cstdio>
+#include <cstdlib>
 
 struct tree {
 	int item;					/* data item */
@@ -41,13 +42,13 @@ void traverse_tree(tree *t)
 	}
 }
 
-void insert_tree(tree **t, int x, tree *parent)
+void insert_node(tree **t, int x, tree *parent)
 {
 	tree *p;
 	
 	if (*t == NULL)
 	{
-		p = malloc(sizeof(tree));
+		p = (tree*)malloc(sizeof(tree));
 		p->item = x;
 		p->left = p->right = NULL;
 		p->parent = parent;
@@ -56,9 +57,9 @@ void insert_tree(tree **t, int x, tree *parent)
 	}
 	
 	if (x < (*t)->item)
-		insert_tree(&((*t)->left), x, *t);
+		insert_node(&((*t)->left), x, *t);
 	else
-		insert_tree(&((*t)->right), x, *l);
+		insert_node(&((*t)->right), x, *t);
 }
 
 void delete_tree(tree **t, int x, tree *parent)

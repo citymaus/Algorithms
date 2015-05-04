@@ -26,6 +26,9 @@ using namespace std;
     scanf ("%79s",str); 
   NULL;
 
+/* <cstdlib> */
+  malloc(size_t size);
+
 /* <cstring>   (string.h)    C Strings (header) */
   memset(ptr obj, int value, sizeof(obj));      /* <------------------------------ */
   size_t strlen(const char *str);

@@ -1,0 +1,85 @@
+
+-----------------------------------------------------------------------------------------
+SORTS
+-----
+					Time		Space
+					----		-----
+insertion_sort()	O(n^2)
+selection_sort()	O(n^2)
+merge_sort()		O(nlogn)	O(n)		(great for sorting linked lists, disadvantage that queue buffer is needed)
+quick_sort()		O(nlogn)
+heap_sort()			O(nlogn)				(selection sort of a priority queue)
+
+-----------------------------------------------------------------------------------------
+DICTIONARIES
+------------
+                                                        Linked List         Linked List
+                            Array         Array         (unsorted)          (sorted)
+Operation               (unsorted)      (sorted)        Sngl    Dbl         Sngl    Dbl
+----------------------------------------------------------------------------------------         
+Search(L, k)                O(n)        O(log(n))*1     O(n)    O(n)        O(n)    O(n)
+Insert(L, x)                O(1)        O(n)            O(1)    O(1)        O(n)    O(n)
+Delete(L, x)                O(1)*2      O(n)            O(n)*3  O(1)        O(n)*4  O(1)
+Successor(L, x)             O(n)        O(1)            O(n)    O(n)        O(1)    O(1)
+Predecessor(L, x)           O(n)        O(1)            O(n)    O(n)        O(n)*5  O(1)
+Minimum(L)                  O(n)        O(1)            O(n)    O(n)        O(1)    O(1)
+Maximum(L)                  O(n)        O(1)            O(n)    O(n)        O(1)*6  O(1)
+
+
+*1 binary search tree
+*2 instead of shifting A[x + 1] to A[n] up one position, just write over A[x] with A[n]
+*3,4 need to find predecessor node to delete/insert on singly linked lists
+*5 might need to traverse whole list
+*6 maintain a list tail pointer
+
+-----------------------------------------------------------------------------------------
+BINARY SEARCH TREE
+------------------
+
+Operation               BST
+----------------------------------------------------------------------------------------         
+Space()					O(n)
+Search(L, k)            O(logn)
+Insert(L, x)            O(logn)
+Delete(L, x)            O(logn)
+Successor(L, x)         
+Predecessor(L, x)       
+Minimum(L)              
+Maximum(L)              
+
+
+-----------------------------------------------------------------------------------------
+PRIORITY QUEUES (HEAP)
+----------------------
+
+    - FIFO
+    
+                      Array           Array*2       Balanced
+Operations          (unsorted)      (sorted)        Tree
+-------------------------------------------------------------
+Insert(Q, x)		O(1)			O(n)			O(logn)	
+Find-Minimum(Q)*1	O(1)			O(1)			O(1)
+Delete_Minimum(Q)	O(n)			O(1)			O(logn)
+
+*1 store pointer/index to minimum entry.
+	on delete, find_minimum to restore pointer
+*2 store sorted array in reverse order so min element is last in array
+
+-----------------------------------------------------------------------------------------
+HASH TABLES
+-----------
+n: number of elements
+m: number of buckets
+
+- useful for substring pattern matching, duplicate detection
+
+                    Hash Table      Hash Table
+Operations          (expected)      (worst case)
+------------------------------------------------
+Search(L, k)        O(n/m)			O(n)
+Insert(L, x)        O(1)			O(1)
+Delete(L, x)        O(1)			O(1)
+Successor(L, x)     O(n + m)		O(n + m)
+Predecessor(L, x)   O(n + m)		O(n + m)
+Minimum(L)          O(n + m)		O(n + m)
+Maximum(L)          O(n + m)		O(n + m)

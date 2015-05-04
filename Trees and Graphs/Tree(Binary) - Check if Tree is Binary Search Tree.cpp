@@ -5,6 +5,9 @@
   Space: O(log N)
 */
 
+#include <cstdio>
+#include <climits>
+
 struct TreeNode {
   int data;
   struct TreeNode *left;
@@ -13,12 +16,12 @@ struct TreeNode {
 
 bool isBST(TreeNode *n) 
 {
-  return checkBST(n, MIN_INT, MAX_INT);
+  return checkBST(n, INT_MIN, INT_MAX);
 }
 
 bool checkBST(TreeNode *n, int min, int max) 
 {
-  if (n == null) 
+  if (n == NULL) 
   {
     return true;
   }
