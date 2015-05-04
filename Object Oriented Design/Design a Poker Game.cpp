@@ -3,8 +3,15 @@
 
 #include <string>
 
+using namespace std;
+
 const int SUIT_MAX(4);
 const int RANK_MAX(13);
+
+// make sure the first rank is explicitly set at 1
+// this will make the last rank equal 13
+enum Rank { Ace=1, Two, /* ... */, Queen, King };
+enum Suit { Spades, Hearts, Diamonds, Clubs };
 
 class Card
 {
@@ -20,6 +27,7 @@ private:
     int generate_rank();
     int get_suit() const;
     int get_rank() const;
+    string get_rank();
     int m_suit;
     int m_rank;
 };
@@ -57,6 +65,7 @@ const std::string SUIT[SUIT_MAX]  = {"S", "H", "D", "C"};
 const std::string RANK[RANK_MAX]  = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 
 
+
 Card::Card()
 {
    m_suit = generate_suit(); 
@@ -91,6 +100,16 @@ int Card::get_suit() const
 int Card::get_rank() const
 {
     return m_rank;
+}
+
+string Card::get_rank()
+{
+  switch (m_rank)
+  {
+      case Ace: return "A";
+      // ...
+      default: throw std::logic_error("invalid rank");
+  }
 }
 
 

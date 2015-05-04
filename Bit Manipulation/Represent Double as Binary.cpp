@@ -5,21 +5,26 @@
 
   First, let's start off by asking ourselves what a non-integer number in binary looks like. By
   analogy to a decimal number, the binary number 0.101v2 would look like:
-  0.101v2 = 1 * (1/2^1) + 0 * (1/2^2) + 1 * (1/2^3).
+  0.101(base2) = 1 * (1/2^1) + 0 * (1/2^2) + 1 * (1/2^3).
 
   To print the decimal part, we can multiply by 2 and check if 2n is greater than or equal
   to 1.This is essentially "shifting" the fractional sum. That is:
   (v = subscript, ^ = superscript)
-  r = 2v10 * n
-  = 2v10 * 1.101v2
+  r = 2(base10) * n
+  = 2(base10) * 1.101(base2)
   = 1 * (1/2^0) + 0 * (1/2^1) + 1 * (1/2^2)
-  = 1.01v2
+  = 1.01(base2)
 
   If r >= 1, then we know that n had a 1 right after the decimal point. By doing this
   continuously, we can check every digit.
 */
 
-static string printBinary(double num) 
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+string printBinary(double num) 
 {
   if (num >= 1 || num <= 0) {
     return "ERROR";

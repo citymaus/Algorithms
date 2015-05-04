@@ -109,7 +109,7 @@ int getPrev(int n)
 {
   int temp = n;
   int c0 = 0;
-  int cl = 0;
+  int c1 = 0;
   while (temp & 1 == 1) 
   {
     c1++;
