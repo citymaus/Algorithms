@@ -1,3 +1,8 @@
+#include <cstdio>
+#include <iostream>
+#include <queue>
+using namespace std;
+
 #define MAXV		1000	/* maximum number of vertices */
 
 struct edgenode {
@@ -11,7 +16,7 @@ struct graph {
 	int degree[MAXV+1];			/* outdegree of each vertex */
 	int nvertices;				/* number of vertices in graph */
 	int nedges;					/* number of edges in graph */
-	bool directed;				/* is teh graph directed? */
+	bool directed;				/* is the graph directed? */
 };
 
 void initialize_graph(graph *g, bool directed)
@@ -37,7 +42,7 @@ void read_graph(graph *g, bool directed)
 	scanf("%d %d", &(g->nvertices), &m);
 	
 	for (i = 1; i <= m; i++) {
-		scanf("%d %d, &x, &y);
+		scanf("%d %d", &x, &y);
 		insert_edge(g, x, y, directed);
 	}
 }
@@ -46,7 +51,7 @@ void insert_edge(graph *g, int x, int y, bool directed)
 {
 	edgenode *p;					/* temporary pointer */
 	
-	p = malloc(sizeof(edgenode));	/*allocate edgenode storage */
+	p = (edgenode *)malloc(sizeof(edgenode));	/*allocate edgenode storage */
 	
 	p->weight = NULL;
 	p->y = y;
@@ -55,8 +60,8 @@ void insert_edge(graph *g, int x, int y, bool directed)
 	g->edges[x] = p;				/* insert at head of list */
 	g->degree[x]++;
 	
-	if (directed == FALSE) {
-		insert_edge(g, y, x, TRUE);
+	if (directed == false) {
+		insert_edge(g, y, x, true);
 	} else {
 		g->nedges++;
 	}
@@ -91,39 +96,43 @@ void initialize_search(graph *g)
 	
 	for (i = 1; i <= g->nvertices; i++)
 	{
-		processed[i] = discovered[i] = FALSE;
+		processed[i] = discovered[i] = false;
 		parent[i] = -1;
 	}
 }
 
 void breadth_first_search(graph *g, int start)
 {
-	queue q;				/* queue of vertices to visit */
+	queue<int> q;				/* queue of vertices to visit */
 	int v; 					/* current vertex */
 	int y;					/* successor vertex */
 	edgenode *p;			/* temporary pointer */
 	
-	init_queue(&q);
-	enqueue(&q, start);
-	discovered[start] = TRUE;
+	//init_queue(&q);
+	//enqueue(&q, start);
+	q.push(start);      /* push to back */
+  discovered[start] = true;
 	
-	while(empty_queue(&q) == FALSE) 
+	while(q.empty() == false) 
 	{
-		v = dequeue(&q);
-		process_vertex_early(v);
-		processed[v] = TRUE;
+		//v = dequeue(&q);
+		v = q.front();
+    q.pop();        /* pop the front */
+    process_vertex_early(v);
+		processed[v] = true;
 		p = g->edges[v];
 		while (p != NULL)
 		{
 			y = p->y;
-			if ((processed[y] == FALSE) || g->directed)
+			if ((processed[y] == false) || g->directed)
 			{
 				process_edge(v, y);
 			}
-			if (discovered[y] == FALSE) 
+			if (discovered[y] == false) 
 			{
-				enqueue(&q, y);
-				discovered[y] = TRUE;
+				//enqueue(&q, y);
+        q.push(y);      /* push to back */
+				discovered[y] = true;
 				parent[y] = v;
 			}
 			p = p->next;
@@ -138,7 +147,7 @@ void process_vertex_late(int v)
 
 void process_vertex_early(int v)
 {
-	printf("rpocessed vertex %d\n", v);
+	printf("processed vertex %d\n", v);
 }
 
 void process_edge(int x, int y)
@@ -167,7 +176,7 @@ void depth_first_search(graph *g, int v)
 	
 	if (finished) return;	/* allow for search termination */
 	
-	discovered[v] = TRUE;
+	discovered[v] = true;
 	time = time + 1;
 	entry_time[v] = time;
 	
@@ -177,13 +186,13 @@ void depth_first_search(graph *g, int v)
 	while (p != NULL)
 	{
 		y = p->y;
-		if (discovered[y] == FALSE)
+		if (discovered[y] == false)
 		{
 			parent[y] = v;
 			process_edge(v, y);
 			depth_first_search(g, y);
 		}
-		else if ((!processed[y] || (g->directed))
+		else if ((!processed[y]) || (g->directed))
 		{
 			process_edge(v, y);
 		}
@@ -198,5 +207,5 @@ void depth_first_search(graph *g, int v)
 	time = time + 1;
 	exit_time[v] = time;
 	
-	processed[v] = TRUE;
+	processed[v] = true;
 }
