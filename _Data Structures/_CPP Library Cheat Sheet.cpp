@@ -224,7 +224,7 @@ LESS COMMON:
 #include <stack>            // LIFO stack, can be implemented as vector, list or deque, 
   std::stack<int> mystack;  // double-ended-queue (deque) is default
   for (int i=0; i<5; ++i) mystack.push(i);
-  std::cout << "Popping out elements...";
+  std::cout << "Popping out " << mystack.size() << " elements...";
   while (!mystack.empty())
   {
      std::cout << ' ' << mystack.top();
@@ -233,7 +233,7 @@ LESS COMMON:
   std::cout << '\n';
   /*
   OUTPUT:
-    Popping out elements... 4 3 2 1 0
+    Popping out 5 elements... 4 3 2 1 0
   */
 
 #include <map>            // (Hash?) Map header, typically binary search tree

@@ -7,7 +7,7 @@
 template <class K_Type, class V_Type> class Hash
 {
   private:
-    const int MAX_BUCKETS = 10;
+    const int MAX_BUCKETS = 10;           /* ideally a prime number to reduce collisions */
     const int MAX_LIST_LENGTH = 10;
     list<Cell<K_Type, V_Type>> items[MAX_BUCKETS];
 
@@ -93,7 +93,7 @@ template <class K_Type, class V_Type> class Cell
 
     bool equivalent(Cell<K_Type, V_Type> c) 
     {
-      return equivalent.getKey(c.getKey());
+      return equivalent(c.getKey());
     }
 
     bool equivalent(K_Type k) 

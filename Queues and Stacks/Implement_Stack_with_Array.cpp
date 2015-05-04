@@ -39,7 +39,7 @@ int pop(int stackNum)
     printf("Trying to pop an empty stack.");
   }
   int value = buffer[absTopOfStack(stackNum)]; // Get top
-  buffer[absTopOfStack(stackNum)] = 0; // Clear index
+  buffer[absTopOfStack(stackNum)] = -1; // Clear index
   stackPointer[stackNum]--; // Decrement pointer
   stackSize--;
   return value;

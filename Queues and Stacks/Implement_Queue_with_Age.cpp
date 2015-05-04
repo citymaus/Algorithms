@@ -8,82 +8,113 @@ such as enqueue, dequeueAny, dequeueDog and dequeueCat. You may
 use the built-in LinkedList data structure.
 */
 
-public abstract class Animal {
-  private int order;
-  protected String name;
+#include <cstdio>
+#include <cstring>
+#include <stack>
 
-  public Animal(String n) {
-    name = n;
-  }
+using namespace std;
 
-  public void setOrder(int ord) {
-    order = ord;
-  }
+class Animal {
+  private:
+    int order;
 
-  public int getOrder() {
-    return order;
-  }
+  protected:
+    string aname;
+    string type;
+    typedef Animal super; // note that it could be hidden in
+                          // protected/private section, instead
 
-  public boolean is01derThan(Animal a) {
-    return this.order < a.getOrderQ;
-  }
+  public:
+    Animal() {}
+    Animal(string n) {
+      aname = n;
+    }
+
+    void setOrder(int ord, string t) {
+      order = ord;
+      type = t;
+    }
+
+    int getOrder() {
+      return order;
+    }
+
+    bool isOlderThan(Animal a) {
+      return (getOrder() < a.getOrder());
+    }
+
+    bool isDog()
+    {
+      return (strcmp(type.c_str(), "dog") == 0);
+    }
 }
 
-public class AnimalQueue 
+class AnimalQueue 
 {
-  LinkedList<Dog> dogs = new LinkedList<Dog>();
-  LinkedList<Cat> cats = new LinkedList<Cat>();
-  private int order = 0; // acts as timestamp
+  stack<Dog> dogs;
+  stack<Cat> cats;
 
-  public void enqueue(Animal a) {
-    /* Order is used as a sort of timestamp, so that we can
-    * compare the insertion order of a dog to a cat. */
-    a.setOrder(order);
-    order++;
+  private:
+    int order; // acts as timestamp
 
-    if (a instanceof Dog) 
-      dogs.addLast((Dog) a);
-    else if (a instanceof Cat) 
-      cats.addLast((Cat) a);
-  }
+  public:
+    AnimalQueue() : order(0) {}
 
-  public Animal dequeueAny() 
-  {
-    /* Look at tops of dog and cat queues, and pop the stack
-    * with the oldest value. */
-    if (dogs.size() == 0) {
-      return dequeueCats();
-    } else if (cats.sizeQ == 0) {
-      return dequeueDogs();
+    void enqueue(Animal a) {
+      /* Order is used as a sort of timestamp, so that we can
+      * compare the insertion order of a dog to a cat. */
+      a.setOrder(order, a.isDog() ? "dog" : "cat");
+      order++;
+
+      if (a.isDog()) 
+        dogs.push((Dog) a);
+      else if (!a.isDog()) 
+        cats.push((Cat) a);
     }
 
-    Dog dog = dogs.peek();
-    Cat cat = cats.peek();
+    Animal dequeueAny() 
+    {
+      /* Look at tops of dog and cat queues, and pop the stack
+      * with the oldest value. */
+      if (dogs.size() == 0) {
+        return dequeueCats();
+      } else if (cats.size() == 0) {
+        return dequeueDogs();
+      }
 
-    if (dog.isOlderThan(cat)) {
-      return dequeueDogs();
-    } else {
-      return dequeueCats();
+      Dog dog = dogs.top();
+      Cat cat = cats.top();
+
+      if (dog.isOlderThan(cat)) {
+        return dequeueDogs();
+      } else {
+        return dequeueCats();
+      }
     }
+
+  Dog dequeueDogs() {
+    Dog d = dogs.top();
+    dogs.pop();
+    return d;
   }
 
-  public Dog dequeueDogs() {
-    return dogs.poll();
-  }
-
-  public Cat dequeueCats() {
-    return cats.poll();
+  Cat dequeueCats() {
+    Cat c = cats.top();
+    cats.pop();
+    return c;
   }
 }
 
-public class Dog extends Animal {
-  public Dog(String n) {
-    super(n);
-  }
+class Dog : public Animal {
+  public:
+    Dog(string n) {
+      super(n);
+    }
 }
 
-public class Cat extends Animal {
-  public Cat(String n) {
-    super(n);
-  }
+class Cat : public Animal {
+  public:
+    Cat(string n) {
+      super(n);
+    }
 }

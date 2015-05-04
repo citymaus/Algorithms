@@ -2,13 +2,13 @@
 -----------------------------------------------------------------------------------------
 SORTS
 -----
-					Time		Space
-					----		-----
+					        Time		  Space
+					        ----		  -----
 insertion_sort()	O(n^2)
 selection_sort()	O(n^2)
-merge_sort()		O(nlogn)	O(n)		(great for sorting linked lists, disadvantage that queue buffer is needed)
-quick_sort()		O(nlogn)
-heap_sort()			O(nlogn)				(selection sort of a priority queue)
+merge_sort()		  O(nlogn)	O(n)		(great for sorting linked lists, disadvantage that queue buffer is needed)
+quick_sort()		  O(nlogn)
+heap_sort()			  O(nlogn)				  (selection sort of a priority queue)
 
 -----------------------------------------------------------------------------------------
 DICTIONARIES
@@ -38,7 +38,7 @@ BINARY SEARCH TREE
 
 Operation               BST
 ----------------------------------------------------------------------------------------         
-Space()					O(n)
+Space()					        O(n)
 Search(L, k)            O(logn)
 Insert(L, x)            O(logn)
 Delete(L, x)            O(logn)
@@ -57,9 +57,9 @@ PRIORITY QUEUES (HEAP)
                       Array           Array*2       Balanced
 Operations          (unsorted)      (sorted)        Tree
 -------------------------------------------------------------
-Insert(Q, x)		O(1)			O(n)			O(logn)	
-Find-Minimum(Q)*1	O(1)			O(1)			O(1)
-Delete_Minimum(Q)	O(n)			O(1)			O(logn)
+Insert(Q, x)		      O(1)			      O(n)			    O(logn)	
+Find-Minimum(Q)*1	    O(1)			      O(1)			    O(1)
+Delete_Minimum(Q)	    O(n)			      O(1)			    O(logn)
 
 *1 store pointer/index to minimum entry.
 	on delete, find_minimum to restore pointer
@@ -76,10 +76,10 @@ m: number of buckets
                     Hash Table      Hash Table
 Operations          (expected)      (worst case)
 ------------------------------------------------
-Search(L, k)        O(n/m)			O(n)
-Insert(L, x)        O(1)			O(1)
-Delete(L, x)        O(1)			O(1)
-Successor(L, x)     O(n + m)		O(n + m)
-Predecessor(L, x)   O(n + m)		O(n + m)
-Minimum(L)          O(n + m)		O(n + m)
-Maximum(L)          O(n + m)		O(n + m)
+Search(L, k)        O(n/m)			      O(n)
+Insert(L, x)        O(1)			        O(1)
+Delete(L, x)        O(1)			        O(1)
+Successor(L, x)     O(n + m)		      O(n + m)
+Predecessor(L, x)   O(n + m)		      O(n + m)
+Minimum(L)          O(n + m)		      O(n + m)
+Maximum(L)          O(n + m)		      O(n + m)

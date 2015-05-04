@@ -19,7 +19,7 @@ class Entry {              // in Java, an abstract class
     bool isDirectory;
 
   public:
-    Entry(String n, Directory p) 
+    Entry(string n, Directory p) 
     : name(n),
       parent(p),
       isDirectory(false)

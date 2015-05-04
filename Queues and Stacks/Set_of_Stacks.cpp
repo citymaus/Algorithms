@@ -8,9 +8,16 @@ pop () should behave identically to a single stack (that is, pop () should retur
 same values as it would if there were just a single stack).
 */
 
+#include <cstdio>
+#include <vector>
+#include <stack>
+#include <deque>
+
+using namespace std;
+
 #define MAXSTACKSIZE  10
 
-vector<Stack> stacks = new vector<Stack>()j
+vector<stack<int>> stacks;
 
 void init_new_stack()
 {
@@ -19,21 +26,31 @@ void init_new_stack()
 
 void push(int value)
 {
-  Stack last = getLastStackQ;
-  if (last != null && !last.isFull()) { // add to last stack
-    last.push(v);
+  stack<int> last = stacks.back();
+  if (last.top() != NULL && !isFull(last)) { // add to last stack
+    last.push(value);
   } else { // must create new stack
-    Stack stack = new Stack(capacity);
-    stack.push(v);
-    stacks.add(stack);
+    deque<int> temp (MAXSTACKSIZE, 0);
+    stack<int> stack1 (temp);
+    stack1.push(value);
+    stacks.push_back(stack1);
   }
 }
 
 int pop()
 {
-  Stack last = getLastStackQ;
-  int v = last.popQ;
-  if (last.size == 0) 
-    stacks.remove(stacks.size() - 1);
+  stack<int> last = stacks.back();
+  int v = last.top();
+  last.pop();
+  if (last.size() == 0) 
+    stacks.pop_back();
   return v;
+}
+
+bool isFull(stack<int> s)
+{
+  if (s.size() == MAXSTACKSIZE)
+    return true;
+
+  return false;
 }
