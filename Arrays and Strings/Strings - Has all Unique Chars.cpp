@@ -5,6 +5,10 @@
   What if you cant use additional data structures.
 ------------------------*/
 
+#include <string>
+#include <set>
+using namespace std;
+
 //solution1: use set as additional data structure. 
 //  insert each character in the string to the set. if the string has all  unique characters, 
 //  the size of the set should be equal to the size of string.
@@ -40,7 +44,7 @@ bool bfhasUniqueChars(char *s)
 }
 
 //solution3: quicksort first, then check if next element equals current element.
-boolean checkUnique(char arr[])
+bool checkUnique(char arr[])
 {
     quicksort(arr);   // O(n*lg(n))
     for(int i = 0; i < arr.length - 1; ++i)
