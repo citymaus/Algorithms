@@ -3,7 +3,7 @@ struct Node
 {
     int data;
     struct Node *next;
-}
+};
 
 /*
   You have two numbers represented by a linked list, where each node contains a
@@ -19,6 +19,8 @@ struct Node
   -------
     9 1 2
 */
+
+#include <cstdio>
 
 Node *addLists(Node *list1, Node *list2, int carry)
 {
