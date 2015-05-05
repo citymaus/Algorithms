@@ -1,23 +1,31 @@
 /*
   Write a method to return all subsets of a set.
 */
-ArrayList<ArrayList<int>> getSubsets(Arraylist<int> set, int index) 
+#include <cstdio>
+#include <vector>
+using namespace std;
+
+vector<vector<int>> getSubsets(vector<int> set, int index) 
 {
-  ArrayList<ArrayList<int>> allsubsets;
-  if (set.size() == index) { // Base case - add empty set
-    allsubsets = new ArrayList<ArrayList<int>>();
-    allsubsets.add(new ArrayList<int>()); // Empty set
-  } else {
+  vector<vector<int>> allsubsets;
+  if (set.size() == index) 
+  { // Base case - add empty set
+    vector<vector<int>> allsubsets;
+    vector<int> emptysubset;
+    allsubsets.push_back(emptysubset); // Empty set
+  } 
+  else 
+  {
     allsubsets = getSubsets(set, index + 1);
-    int item = set.get(index);
-    ArrayList<ArrayList<int>> moresubsets = new ArrayList<ArrayList<int>>();
-    for (ArrayList<int> subset : allsubsets) {
-      ArrayList<int> newsubset = new ArrayList<int>();
-      newsubset.addAll(subset); //
-      newsubset.add(item);
-      moresubsets.add(newsubset);
+    int item = set[index];
+    vector<vector<int>> moresubsets;
+    for (vector<vector<int>>::iterator subset = allsubsets.begin(); subset != allsubsets.end(); subset++) {
+      vector<int> newsubset;
+      newsubset.insert(newsubset.end(), (*subset).begin(), (*subset).end()); //
+      newsubset.push_back(item);
+      moresubsets.push_back(newsubset);
     }
-    allsubsets.addAll(moresubsets);
+    allsubsets.insert(allsubsets.end(), moresubsets.begin(), moresubsets.end());
   }
   return allsubsets;
 }

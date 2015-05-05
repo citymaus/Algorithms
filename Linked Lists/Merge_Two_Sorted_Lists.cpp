@@ -7,6 +7,15 @@
      struct Node *next;
   }
 */
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
 
 void PrintMe(Node* head);
 void PrintMe(Node* head)

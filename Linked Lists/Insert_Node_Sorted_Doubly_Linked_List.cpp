@@ -1,3 +1,14 @@
+
+#include <cstdio>
+#include <cstdlib>
+
+struct Node
+{
+    int data;
+    struct Node *next;
+    struct Node *prev;
+};
+
 Node* SortedInsert(Node *head,int data)
 {
     // Complete this function
@@ -6,7 +17,7 @@ Node* SortedInsert(Node *head,int data)
     Node* curr_node = head;
     Node* prev_node = NULL;
     
-    Node* new_node = (Node*)malloc(sizeof(Node*));
+    Node* new_node = (Node*)malloc(sizeof(Node));
     new_node->data = data;
     new_node->prev = NULL;
     new_node->next = NULL;

@@ -9,6 +9,16 @@
      struct Node *next;
   }
 */
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
 
 void PrintMe(Node* head);
 void PrintMe(Node* head)
@@ -25,7 +35,7 @@ Node* InsertNth(Node *head, int data, int position)
   // Complete this method only
   // Do not write main function. 
     //cout << "    insert " << data << " at pos:" << position << endl;
-    Node* n = (Node*)malloc(sizeof(Node*));
+    Node* n = (Node*)malloc(sizeof(Node));
     n->next = NULL;
     n->data = data;
     /*cout << "BEFORE:";

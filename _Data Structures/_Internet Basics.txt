@@ -1,0 +1,12 @@
+Socket types
+-------------
+Several Internet socket types are available:
+
+Datagram sockets,               also known as connectionless sockets, which use User Datagram Protocol (UDP).
+Stream sockets,                 also known as connection-oriented sockets, which use Transmission Control Protocol (TCP) or Stream Control Transmission Protocol (SCTP).
+Raw sockets (or Raw IP sockets), typically available in routers and other network equipment. Here the transport layer is bypassed, and the packet headers are made accessible to the application.
+Other socket types are implemented over other transport protocols, such as Systems Network Architecture (SNA).[2] See also Unix domain sockets (UDS), for internal inter-process communication.
+
+
+UDP
+TCP

@@ -20,7 +20,7 @@ struct Node
 Node* Insert(Node *head,int data)
 {
   // Complete this method
-    Node* n = (Node*)malloc(sizeof(Node*));
+    Node* n = (Node*)malloc(sizeof(Node));
     n->data = data;
     n->next = NULL;
     

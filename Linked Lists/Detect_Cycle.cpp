@@ -8,8 +8,15 @@
      struct Node *next;
   }
 */
+#include <cstdio>
 
-Node * BeginningOfCycle(Node* head)
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+Node* BeginningOfCycle(Node* head)
 {
    // Complete this function
    // Do not write the main method
@@ -26,8 +33,8 @@ Node * BeginningOfCycle(Node* head)
     }
 
     /* Error check - no meeting point, and therefore no loop */
-    if (hare == null || hare->next == null) {
-      return null;
+    if (hare == NULL || hare->next == NULL) {
+      return NULL;
     }
 
     /* Move tortoise to Head. Keep hare at Meeting Point. Each are k

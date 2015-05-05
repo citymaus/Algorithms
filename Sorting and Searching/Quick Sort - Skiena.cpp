@@ -11,8 +11,11 @@
   
 		
 */
+#include <cstdio>
+#include <algorithm>
+#include <utility>
 
-void quick_sort(item_type s[], int left, int right)
+void quick_sort(int s[], int left, int right)
 {
 	int i = left;
 	int j = right;

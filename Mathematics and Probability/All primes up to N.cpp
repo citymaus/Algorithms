@@ -2,6 +2,8 @@
   Find the number of prime numbers up to n.
 */
 #include <cstring>    /* memset */
+#include <cmath>
+using namespace std;
 
 int num_primes(int n)
 {
