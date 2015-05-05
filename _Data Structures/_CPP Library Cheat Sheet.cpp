@@ -14,7 +14,8 @@ using namespace std;
 //
 // From http://www.cplusplus.com/reference/
 //--------------------------------------------------------------------------------------
-/* <cstdio>    (stdio.h)     C library to perform Input/Output operations (header) */
+/* <cstdio>    (stdio.h)     C library to perform Input/Output operations (header) 
+/* <iostream>    ()     C library to perform Input/Output operations (header) */
   printf;
   cout;
   cin;
