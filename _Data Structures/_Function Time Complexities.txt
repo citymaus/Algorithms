@@ -11,6 +11,64 @@ quick_sort()		  O(nlogn)
 heap_sort()			  O(nlogn)				  (selection sort of a priority queue)
 
 -----------------------------------------------------------------------------------------
+LISTS                           C++     Java
+-----                         Vector, ArrayList
+                    Array       Array     Linked        Balanced
+Operation           (Static)   (Dynamic)  List          Tree
+----------------------------------------------------------------
+Indexing              O(1)        O(1)    O(n)          O(logn)
+Insert at beginning   n/a         O(n)    O(1)          O(logn)
+Insert at end         n/a         O(1)    O(n)*         O(logn)
+Insert at middle      n/a         O(n)    search + O(1) O(logn)
+Search                                    O(n)
+Wasted Space          0           O(n)    O(n)          O(n)
+
+* When last element is unknown. When known, O(1)
+
+-----------------------------------------------------------------------------------------
+LINKED LIST
+-----------
+
+Advantages
+* Linked lists are a dynamic data structure, allocating the needed memory while the program is running.
+* Insertion and deletion node operations are easily implemented in a linked list.
+* Linear data structures such as stacks and queues are easily executed with a linked list.
+* They can reduce access time and may expand in real time without memory overhead.
+
+Disadvantages
+* SEARCH: mostly linear search time, over other data structures.
+* They have a tendency to use more memory due to pointers requiring extra storage space.
+* Nodes in a linked list must be read in order from the beginning as linked lists are inherently sequential access.
+* Nodes are stored incontiguously, greatly increasing the time required to access individual elements within the list.
+* Difficulties arise in linked lists when it comes to reverse traversing. For instance, 
+  singly linked lists are cumbersome to navigate backwards[1] and while doubly linked lists 
+  are somewhat easier to read, memory is wasted in allocating space for a back pointer.
+
+-----------------------------------------------------------------------------------------
+STACK
+-----
+
+* Implemented through array or linked list
+
+
+-----------------------------------------------------------------------------------------
+PRIORITY QUEUES (HEAP)
+----------------------
+
+    - FIFO
+    
+                      Array           Array*2       Balanced
+Operations          (unsorted)      (sorted)        Tree
+-------------------------------------------------------------
+Insert(Q, x)		      O(1)			      O(n)			    O(logn)	
+Find-Minimum(Q)*1	    O(1)			      O(1)			    O(1)
+Delete_Minimum(Q)	    O(n)			      O(1)			    O(logn)
+
+*1 store pointer/index to minimum entry.
+	on delete, find_minimum to restore pointer
+*2 store sorted array in reverse order so min element is last in array
+
+-----------------------------------------------------------------------------------------
 DICTIONARIES
 ------------
                                                         Linked List         Linked List
@@ -47,24 +105,6 @@ Predecessor(L, x)
 Minimum(L)              
 Maximum(L)              
 
-
------------------------------------------------------------------------------------------
-PRIORITY QUEUES (HEAP)
-----------------------
-
-    - FIFO
-    
-                      Array           Array*2       Balanced
-Operations          (unsorted)      (sorted)        Tree
--------------------------------------------------------------
-Insert(Q, x)		      O(1)			      O(n)			    O(logn)	
-Find-Minimum(Q)*1	    O(1)			      O(1)			    O(1)
-Delete_Minimum(Q)	    O(n)			      O(1)			    O(logn)
-
-*1 store pointer/index to minimum entry.
-	on delete, find_minimum to restore pointer
-*2 store sorted array in reverse order so min element is last in array
-
 -----------------------------------------------------------------------------------------
 HASH TABLES
 -----------
@@ -72,6 +112,9 @@ n: number of elements
 m: number of buckets
 
 - useful for substring pattern matching, duplicate detection
+- use only when dataset is large
+- the cost of a good hash function can be significantly higher than the inner loop of 
+  the lookup algorithm for a sequential list or search tree for small datasets
 
                     Hash Table      Hash Table
 Operations          (expected)      (worst case)
@@ -83,3 +126,4 @@ Successor(L, x)     O(n + m)		      O(n + m)
 Predecessor(L, x)   O(n + m)		      O(n + m)
 Minimum(L)          O(n + m)		      O(n + m)
 Maximum(L)          O(n + m)		      O(n + m)
+Space               O(n)              O(n)
