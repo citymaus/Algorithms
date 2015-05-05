@@ -1,4 +1,6 @@
 
+#include <string>
+using namespace std;
 
 string compression(string s)
 {
