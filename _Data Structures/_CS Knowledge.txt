@@ -1,0 +1,81 @@
+To be pedantic, there are 7 different valid -O options you can give to gcc, though there are some that mean the same thing. From the man page
+
+-O (Same as -O1)
+-O0 (do no optimization, the default if no optimization level is specified)
+-O1 (optimize minimally)
+-O2 (optimize more)
+-O3 (optimize even more)
+-Ofast (optimize very aggressively to the point of breaking standard compliance)
+-Os (Optimize for size. -Os enables all -O2 optimizations that do not typically increase code size. 
+    It also performs further optimizations designed to reduce code size. 
+   -Os disables the following optimization flags: -falign-functions -falign-jumps 
+   -falign-loops -falign-labels -freorder-blocks -freorder-blocks-and-partition 
+   -fprefetch-loop-arrays -ftree-vect-loop-version)
+
+Differences between C++ and Java
+--------------------------------
+There are a number of C++ features that Java does not support. Perhaps the single 
+biggest difference between Java and C++ is that Java does not support pointers. 
+(Haven't we all already know that!)  In C++, pointer is one of C++ most important 
+language features.  It is also one of the most dangerous if used improperly.  
+Pointers don't exist in Java for two reasons. First, pointers are inherently insecure.  
+For example, using a C++ pointer, it is possible to gain access to memory addresses 
+outside a program's code and data. Second, the designer of Java probably think that 
+they were too troublesome.  Since pointers don't exist in Java, neither does the -> 
+operator. Smalltalk, like Java, does not have the notion of pointers. Everything in 
+Smalltalk is passed by reference.
+
+Java does not include structures or unions.  These were felt to be redundant since 
+the class encapsulates them.
+
+Java does not support operator overloading as does C++.
+
+C++ includes a preprocessor or support the preprocessor directives
+but Java does not.
+
+C++ does perform automatic type conversions that result in a loss of precision.  
+Java does not.  
+   For example, a conversion from long integer to integer must be explicitly cast.
+
+C++ allows default arguments.  This means that you may specify a value that a parameter 
+will have when there is no argument corresponding  to that parameter when the function 
+is invoked.  Java does not allow default argument.
+
+C++ supports inheritance of multiple superclasses by a subclass which Java and 
+Smalltalk do not.
+
+To derive a class, the keyword "extends" is used in Java as ":" is used in C++.  Smalltalk 
+uses the keyword "subclass" instead.
+
+The keyword "super" can be used to access the super class in Smalltalk and Java.  
+In C++, super is being replaced with ::.  Also, in Smalltalk the keyword "self" is
+"this" in Java and C++.
+
+Although Java supports constructors, it does not have destructors.  It does, however, 
+add the finalize() function which can be used to reclaim resources other than memory 
+such as a file or a handle to another object.  Therefore, Java does not have the 
+delete operator.
+
+In C++ and Java all variables are typed, but in Smalltalk all variables are typeless
+and can point to any object or class.
+
+Polymorhism can be turned on or off in C++ by a keyword virtual.  In Java, polymorphism
+is always on by default.  If one does not want it, the keyword "final" can be used.  
+Smalltalk's polymorphism is always on by default.
+
+You can still write a procedural program using C++, but not in Java and Smalltalk.
+
+Smalltalk is a interactive environment and lets the programmer view all of the source
+code. As you guessed, this is not the case for the other languages.
+
+In C++ and Java the programmer can specify the access attributes for the variables 
+and methods.  In Smalltalk those are fixed: all variables are protected and all methods
+are public.
+
+
+Some Best Coding Practices:
+---------------------------
+- Naming conventions (m_dog for member variable)
+- Returning only once from functions to reduce memory leaks
+- Proper mem deallocation and object destruction
+- Code reviews (what I think is pretty should be reviewed)

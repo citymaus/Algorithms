@@ -10,3 +10,34 @@ Other socket types are implemented over other transport protocols, such as Syste
 
 UDP
 TCP
+
+
+Packets
+-------
+Packet reassembly:
+at the IP level, reassembly the fragmented packets based on the offset value.
+at the TCP level, re-order the packets (reassembly) based on sequence number.
+
+
+IPv4                  vs.     IPv6
+----------------------------------------------------------------------
+4 billion addresses         340 trillion, trillion, trillion addresses 340 with 36 0's
+32 bit address              128 bit address
+Design in 70's              Came out in 2012
+Longer headers              Shorter headers
+                            (Version, Traffic Class, Flow Label, Payload length, Next Header, Hop Limit, Source, Destination
+Base 10                     Hexadecimal
+
+- Eliminates most address conflict issues
+- IPv6 encrypts traffic and checks packet integrity
+- No more NAT (Network Address Translation)
+- Auto-configuration
+- No more private address collisions
+- Better multicast routing
+- Simpler header format
+- Simplified, more efficient routing
+- True quality of service (QoS), also called "flow labeling"
+- Built-in authentication and privacy support
+- Flexible options and extensions
+- Easier administration (say good-bye to DHCP)
+
