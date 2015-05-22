@@ -37,6 +37,9 @@ C++ does perform automatic type conversions that result in a loss of precision.
 Java does not.  
    For example, a conversion from long integer to integer must be explicitly cast.
 
+
+C++ and Java Differences:
+--------------------------
 C++ allows default arguments.  This means that you may specify a value that a parameter 
 will have when there is no argument corresponding  to that parameter when the function 
 is invoked.  Java does not allow default argument.
@@ -59,18 +62,28 @@ delete operator.
 In C++ and Java all variables are typed, but in Smalltalk all variables are typeless
 and can point to any object or class.
 
-Polymorhism can be turned on or off in C++ by a keyword virtual.  In Java, polymorphism
+Polymorphism can be turned on or off in C++ by a keyword virtual.  In Java, polymorphism
 is always on by default.  If one does not want it, the keyword "final" can be used.  
 Smalltalk's polymorphism is always on by default.
 
 You can still write a procedural program using C++, but not in Java and Smalltalk.
 
-Smalltalk is a interactive environment and lets the programmer view all of the source
+//Smalltalk is a interactive environment and lets the programmer view all of the source
 code. As you guessed, this is not the case for the other languages.
 
 In C++ and Java the programmer can specify the access attributes for the variables 
-and methods.  In Smalltalk those are fixed: all variables are protected and all methods
+and methods.  
+//In Smalltalk those are fixed: all variables are protected and all methods
 are public.
+
+C and C++ Security Issues:
+--------------------------
+One of the biggest security problems with C and C++ programs is buffer overflow. 
+C has the additional weakness of not supporting exceptions, which makes it easy to write programs that ignore critical error situations.
+
+Another problem with C and C++ is that developers have to do their own memory management (e.g., using malloc(), alloc(), free(), new, and delete), 
+and failing to do it correctly may result in a security flaw. The more serious problem is that programs may erroneously free memory that should not be freed 
+(e.g., because it's already been freed). This can result in an immediate crash or be exploitable, allowing an attacker to cause arbitrary code to be executed. 
 
 
 Some Best Coding Practices:

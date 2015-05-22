@@ -21,3 +21,119 @@ Level-order
 
 
 */
+
+#include <cstdio>
+#include <queue>
+using namespace std;
+
+struct node
+{
+    int mData;
+    struct node *left;
+    struct node *right;
+};
+
+void printLevelOrder(node *root)
+{
+    if(NULL == root){
+        return;
+    }
+
+    queue<node *> nodeQueue;
+    nodeQueue.push(root);
+    while(!nodeQueue.empty()){
+        node *n = nodeQueue.front();
+        nodeQueue.pop();
+        if(NULL == n){
+            continue;
+        }
+        printf("%s", n->mData + " ");
+        nodeQueue.push(n->left);
+        nodeQueue.push(n->right);
+    }
+}
+
+void printInOrder(node *root)
+{
+    if (root != NULL)
+    {
+        printInOrder(root->left);
+        printf("%s", root->mData + " ");
+        printInOrder(root->right);
+    }
+}
+
+void printPreOrder(node *root)
+{
+    if (root != NULL)
+    {
+        printf("%s", root->mData + " ");
+        printInOrder(root->left);
+        printInOrder(root->right);
+    }
+}
+
+void printPostOrder(node *root)
+{
+    if (root != NULL)
+    {
+        printInOrder(root->left);
+        printInOrder(root->right);
+        printf("%s", root->mData + " ");
+    }
+}
+
+node* newNode(int data, node *leftNode, node *rightNode)
+{
+    node *n = (node*)malloc(sizeof(node));
+    n->mData = data;
+    n->left = leftNode;
+    n->right = rightNode;
+
+    return n;
+}
+
+node* constructTree()
+{
+    /*
+           9
+          /  \
+        5     15
+      /  \   / \
+     3   8   13 17
+    / \ / \ / \ / \
+    2 4 7 9 12 14 16 19
+
+    */
+
+    node *rootNode = newNode(9,
+                            newNode(5,
+                                newNode(3,
+                                        newNode(2,NULL,NULL),
+                                        newNode(4,NULL,NULL)),
+                                newNode(8,
+                                        newNode(7,NULL,NULL),
+                                        newNode(9,NULL,NULL))),
+                            newNode(15,
+                                newNode(13,
+                                        newNode(12,NULL,NULL),
+                                        newNode(14,NULL,NULL)),
+                                newNode(17,
+                                        newNode(16,NULL,NULL),
+                                        newNode(19,NULL,NULL))
+                                    ));
+
+    return rootNode;
+}
+
+void main() 
+{
+    printf("Level Order traversal of binary tree is \n");
+    printLevelOrder(constructTree());
+    printf("\n\nIn Order traversal of binary tree is \n");
+    printInOrder(constructTree());
+    printf("\n\nPre Order traversal of binary tree is \n");
+    printPreOrder(constructTree());
+    printf("\n\nPost Order traversal of binary tree is \n");
+    printPostOrder(constructTree());
+}

@@ -25,6 +25,13 @@ main()
   int arr[5];
 }
 
+// Return an array
+int* test(int a[5], int b[5])
+{
+    char *c = new char[4];
+    return c;
+}
+
 int       *       p;  // pointer
 int const *       p;  // pointer to const value
 int       * const p;  // const pointer
