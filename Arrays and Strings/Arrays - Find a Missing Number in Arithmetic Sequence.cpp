@@ -2,28 +2,28 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+// 1 3 7 9
 int find_missing(vector<int> vec)
 {
     int interval = 0;
-    int last_interval = vec[1] - vec[0];
+    int common_interval = vec[1] - vec[0];
     int missing = -1;
     for (int i = 2; i < vec.size(); i++)
     {
-        if (vec[i] - vec[i-1] == last_interval)
+        if (vec[i] - vec[i-1] == common_interval)
         {
             break;    
         }
         else
         {
-            last_interval = vec[i] - vec[i-1];    
+            common_interval = vec[i] - vec[i-1];    
         }
     }
     for (int i = 1; i < vec.size(); i++)
     {
-        if (vec[i] - vec[i-1] != last_interval)
+        if (vec[i] - vec[i-1] != common_interval)
         {
-            missing = vec[i] - last_interval;
+            missing = vec[i] - common_interval;
             break;
         }
     }
