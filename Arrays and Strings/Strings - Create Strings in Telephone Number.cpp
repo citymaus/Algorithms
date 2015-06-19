@@ -4,14 +4,14 @@
 using namespace std;
 
 char* getChars(char n, int &numchars);
-void permutation(int val);
+void findwords(int val);
 void permutation(string prefix, string suffix);
 
 void main() {
-    permutation(1345054398);
+    findwords(1345054398);
 }
 
-void permutation(int val)
+void findwords(int val)
 {
     int a = val;
     stringstream ss;

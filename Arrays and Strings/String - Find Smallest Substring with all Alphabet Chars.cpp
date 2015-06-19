@@ -1,9 +1,26 @@
 #include <iostream>
+#include <map>
 #include <string>
 using namespace std;
 
 // To execute C++, please define "int main()"
 // FACEBOOK PHONE SCREEN, ROUND 1 - 5/22/2015
+
+/* 
+Your previous Plain Text content is preserved below:
+
+Given an alphabet of letters and an input string, write a function to find the smallest substring in the input which contains all the letters of the alphabet.
+
+Examples:
+alphabet = ['a', 'b', 'c']
+input = 'ab|bac|ca'
+output = 'bac'
+
+alphabet = ['a', 'b', 'c']
+input = 'ab|baac|ca'
+output = 'baac'
+
+ */
 
 int main() {
   for (int i = 0; i < 5; i++) {
@@ -39,8 +56,7 @@ string smallest_substring(string input, char alphabet[])
     {
       if ((used[firstpass[j]] > 1) && (smallest.length() == 0))
       {
-          used[firstpass[j]]--;
-            //smallest += firstpass[j];          
+          used[firstpass[j]]--;       
       }
       else
       {
@@ -50,20 +66,3 @@ string smallest_substring(string input, char alphabet[])
       
     return smallest;
 }
-
-
-/* 
-Your previous Plain Text content is preserved below:
-
-Given an alphabet of letters and an input string, write a function to find the smallest substring in the input which contains all the letters of the alphabet.
-
-Examples:
-alphabet = ['a', 'b', 'c']
-input = 'ab|bac|ca'
-output = 'bac'
-
-alphabet = ['a', 'b', 'c']
-input = 'ab|baac|ca'
-output = 'baac'
-
- */
