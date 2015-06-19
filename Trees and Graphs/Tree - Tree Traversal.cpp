@@ -45,7 +45,7 @@ void printLevelOrder(node *root)
         node *n = nodeQueue.front();
         nodeQueue.pop();
         if(NULL == n){
-            continue;
+            continue;       // go back to top of the loop
         }
         printf("%s", n->mData + " ");
         nodeQueue.push(n->left);

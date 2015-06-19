@@ -87,3 +87,15 @@ int divide(int a, int b)
     return negate(x);
   }
 }
+
+int divide2(int a, int b)
+{
+    int tmp = a, quotient = 0;
+    while (tmp >= b) {
+        tmp = tmp - b;
+        quotient++;
+    }
+
+    printf ("Result %d, Remainder %d\n", quotient, tmp);
+    return quotient;
+}

@@ -7,7 +7,7 @@ int calculate(string prefix)
 {
     int retvalue = 0;
     stack<char> operations;
-    for (int i = 0; i < prefix.length(); i++)
+    for (int i = prefix.length()-1; i >=0; i--)
     {
         if (isOperator(prefix[i]))
         {

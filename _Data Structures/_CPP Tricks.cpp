@@ -26,7 +26,7 @@ main()
 }
 
 // Return an array
-int* test(int a[5], int b[5])
+char* test(int a[5], int b[5])
 {
     char *c = new char[4];
     return c;
