@@ -3,7 +3,7 @@ char* ReverseAllWords(char in_text[])
     int textlength = sizeof(in_text)/sizeof(char);
     int lindex = 0;
     int rindex = textlength - 1;
-    if (rindex > 1)
+    if (rindex > lindex)
     {
         //reverse complete phrase
         in_text = ReverseString(in_text, 0, rindex);
