@@ -9,44 +9,55 @@
   Space: O(log n + log m)
 */
 
-bool containsTree(TreeNode tl, TreeNode t2) 
+#include <cstdio>
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct TreeNode {
+  int data;
+  struct TreeNode *left;
+  struct TreeNode *right;
+};
+
+bool containsTree(TreeNode* tl, TreeNode* t2) 
 {
-  if (t2 == null) 
+  if (t2 == NULL) 
   { // The empty tree is always a subtree
-    return truej
+    return true;
   }
   return subTree(tl, t2);
 }
 
-bool subTree(TreeNode rl, TreeNode r2) 
+bool subTree(TreeNode* r1, TreeNode* r2) 
 {
-  if (rl == null) 
+  if (r1 == NULL) 
   {
-    return false; II big tree empty & subtree still not found.
+    return false; // big tree empty & subtree still not found.
   }
 
-  if (rl.data == r2.data) 
+  if (r1->data == r1->data) 
   {
-    if (matchTree(rl,r2)) return true;
+    if (matchTree(r1, r2)) return true;
   }
-  return (subTree(rl.left, r2) || subTree(rl.right, r2));
+  return (subTree(r1->left, r2) || subTree(r1->right, r2));
 }
 
-bool matchTree(TreeNode rl, TreeNode r2) 
+bool matchTree(TreeNode* r1, TreeNode* r2) 
 {
-  if (r2 == null && rl == null) // if both are empty
+  if (r2 == NULL && r1 == NULL) // if both are empty
     return true; // nothing left in the subtree
 
   // if one, but not both, are empty
-  if (rl == null || r2 == null) 
+  if (r1 == NULL || r2 == NULL) 
   {
     return false;
   }
 
-  if (rl.data != r2.data)
+  if (r1->data != r2->data)
   {
     return false; // data doesn't match
   }
 
-  return (matchTree(rl.leftJ r2.1eft) && matchTree(rl.right, r2.right));
+  return (matchTree(r1->left, r2->left) && matchTree(r1->right, r2->right));
 }

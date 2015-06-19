@@ -23,42 +23,45 @@
 
 */
 
+#include <queue>
+#include <algorithm>
 #include <climits>
+using namespace std;
 
-public static int getKthMagicNumber(int k) {
+int getKthMagicNumber(int k) {
   if (k < 0) 
   {
     return 0;
   }
   int val = 0;
-  Queue<Integer> queue3 = new LinkedList<Integer>();
-  Queue<Integer> queue5 = new LinkedList<Integer>();
-  Queue<Integer> queue7 = new LinkedList<Integer>();
-  queue3.add(1);
+  queue<int> queue3;
+  queue<int> queue5;
+  queue<int> queue7;
+  queue3.push(1);
 
   /* Include 0th through kth iteration */
   for (int i = 0; i <= k; i++) 
   {
-    int v3 = queue3.size() > 0 ? queue3.peek() :  MAX_INT;
-    int vS = queue5.size() > 0 ? queues.peek() :  MAX_INT;
-    int v7 = queue7.size() > 0 ? queue?.peek() :  MAX_INT;
-    val = Math.min(v3, Math.min(v5, v7));
+    int v3 = queue3.size() > 0 ? queue3.front() :  INT_MAX;
+    int v5 = queue5.size() > 0 ? queue5.front() :  INT_MAX;
+    int v7 = queue7.size() > 0 ? queue7.front() :  INT_MAX;
+    val = min(v3, min(v5, v7));
     if (val == v3) 
-    { // enqueue into queue 3, S and 7
-      queue3.remove();
-      queue3.add(3 * val);
-      queue3.add(5 * val);
+    { // enqueue into queue 3, 5 and 7
+      queue3.pop();
+      queue3.push(3 * val);
+      queue5.push(5 * val);
     } 
     else if (val == v5) 
     { // enqueue into queue 5 and 7
-      queue5.remove();
-      queue5.add(5 * val);
+      queue5.pop();
+      queue5.push(5 * val);
     } 
     else if (val == v7) 
     { // enqueue into Q7
-      queue7.remove();
+      queue7.pop();
     }
-    queue7.add(7 * val); // Always enqueue into Q7
+    queue7.push(7 * val); // Always enqueue into Q7
   }
   return val;
 }

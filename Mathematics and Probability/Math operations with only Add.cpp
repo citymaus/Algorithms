@@ -10,10 +10,10 @@ int negate(int a)
   int d = a < 0 ? 1 : -1;
   while (a != 0) 
   {
-    neg += dj
+    neg += d;
     a += d;
   }
-  return negj
+  return neg;
 }
 
 /* Subtract two numbers by negating b and adding them */
@@ -36,7 +36,7 @@ int multiply(int a, int b)
   }
   if (b < 0) 
   {
-    sum = negate(sum)j
+    sum = negate(sum);
   }
   return sum;
 }

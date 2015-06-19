@@ -30,40 +30,50 @@
 
 */
 
-TreeNode inorderSucc(TreeNode n) 
+#include <cstdio>
+using namespace std;
+
+struct TreeNode {
+  int data;
+  struct TreeNode *parent;
+  struct TreeNode *left;
+  struct TreeNode *right;
+};
+
+TreeNode* inorderSucc(TreeNode* n) 
 {
-  if (n == null) return null;
+  if (n == NULL) return NULL;
 
   /* Found right children 
     -> return leftmost node of right subtree. */
-  if (n.right != null) 
+  if (n->right != NULL) 
   {
-    return leftMostChild(n.right);
+    return leftMostChild(n->right);
   } 
   else 
   {
-    TreeNode curr = n;
-    TreeNode par = curr.parent;
+    TreeNode* curr = n;
+    TreeNode* par = curr->parent;
 
     // Go up until we're on left instead of right
-    while (par != null && par.left != curr) 
+    while (par != NULL && par->left != curr) 
     {
       curr = par;
-      par = par.parent;
+      par = par->parent;
     }
     return par;
   }
 }
 
-TreeNode leftMostChild(TreeNode n) 
+TreeNode* leftMostChild(TreeNode* n) 
 {
-  if (n == null) 
+  if (n == NULL) 
   {
-    return null;
+    return NULL;
   }
-  while (n.left != null) 
+  while (n->left != NULL) 
   {
-    n = n.left;
+    n = n->left;
   }
   return n;
 }

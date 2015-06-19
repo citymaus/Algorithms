@@ -10,7 +10,11 @@
   		
 */
 
-int lomuto_partition(vector <int> & arr, int start, int end, int* numswaps)
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int lomuto_partition(vector<int> &arr, int start, int end, int* numswaps)
 {
   int x = arr[end];
   int i = start - 1;
@@ -33,7 +37,7 @@ int lomuto_partition(vector <int> & arr, int start, int end, int* numswaps)
   return i + 1;
 }
 
-int hoare_partition (vector <int> & arr,int p, int r) {
+int hoare_partition (vector<int> &arr,int p, int r) {
   int x = arr[p];
   int i = p - 1;
   int j = r;
@@ -47,7 +51,7 @@ int hoare_partition (vector <int> & arr,int p, int r) {
   }
 }
 
-int quick_sort4(vector <int> & arr, int start, int end)
+int quick_sort4(vector<int> &arr, int start, int end)
 {
     int numswaps = 0;
     int p_idx;
@@ -67,7 +71,7 @@ int main() {
     int N, r;
     int qswaps;
     cin >> N;
-    vector <int> sortmeq;
+    vector<int> sortmeq;
     for (int i = 0; i < N; i++)
     {
         cin >> r;

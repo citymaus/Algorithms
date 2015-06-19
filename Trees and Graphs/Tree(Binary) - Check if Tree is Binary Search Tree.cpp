@@ -16,7 +16,7 @@ struct TreeNode {
 
 bool isBST(TreeNode *n) 
 {
-  return checkBST(n, INT_MIN, INT_MAX);
+  return checkBST(n, INT_MAX, INT_MIN);
 }
 
 bool checkBST(TreeNode *n, int min, int max) 

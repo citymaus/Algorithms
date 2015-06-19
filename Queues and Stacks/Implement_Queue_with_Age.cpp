@@ -10,7 +10,7 @@ use the built-in LinkedList data structure.
 
 #include <cstdio>
 #include <cstring>
-#include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -51,8 +51,8 @@ class Animal {
 
 class AnimalQueue 
 {
-  stack<Dog> dogs;
-  stack<Cat> cats;
+  queue<Dog> dogs;
+  queue<Cat> cats;
 
   private:
     int order; // acts as timestamp
@@ -82,8 +82,8 @@ class AnimalQueue
         return dequeueDogs();
       }
 
-      Dog dog = dogs.top();
-      Cat cat = cats.top();
+	    Dog dog = dogs.front();
+      Cat cat = cats.front();
 
       if (dog.isOlderThan(cat)) {
         return dequeueDogs();
@@ -93,13 +93,13 @@ class AnimalQueue
     }
 
   Dog dequeueDogs() {
-    Dog d = dogs.top();
+    Dog d = dogs.front();
     dogs.pop();
     return d;
   }
 
   Cat dequeueCats() {
-    Cat c = cats.top();
+    Cat c = cats.front();
     cats.pop();
     return c;
   }
@@ -108,13 +108,13 @@ class AnimalQueue
 class Dog : public Animal {
   public:
     Dog(string n) {
-      super(n);
+		  Animal::Animal(n);
     }
 }
 
 class Cat : public Animal {
   public:
     Cat(string n) {
-      super(n);
+      Animal::Animal(n);
     }
 }
