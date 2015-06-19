@@ -3,6 +3,7 @@
 #include <stack>
 using namespace std;
 
+// "+*123" = 5
 int calculate(string prefix)
 {
     int retvalue = 0;
@@ -77,5 +78,5 @@ int interim(char oper, int firstInt, int secondInt)
 void main() 
 {
     string prefix = "+*123"; // = 5
-
+    calculate(prefix);
 }
