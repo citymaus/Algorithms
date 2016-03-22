@@ -41,3 +41,72 @@ Base 10                     Hexadecimal
 - Flexible options and extensions
 - Easier administration (say good-bye to DHCP)
 
+ReST Development:
+-----------------
+RESTful applications use HTTP requests to post data (create and/or update), read data (e.g., make queries), 
+and delete data. Thus, REST uses HTTP for all four CRUD (Create/Read/Update/Delete) operations.
+
+Issuing HTTP GET Requests (C#)
+//The key classes here are HttpWebRequest and HttpWebResponse from System.Net.
+//The following method issues a request and returns the entire response as one long string:
+
+static string HttpGet(string url) {
+  HttpWebRequest req = WebRequest.Create(url)
+                       as HttpWebRequest;
+  string result = null;
+  using (HttpWebResponse resp = req.GetResponse()
+                                as HttpWebResponse)
+  {
+    StreamReader reader =
+        new StreamReader(resp.GetResponseStream());
+    result = reader.ReadToEnd();
+  }
+  return result;
+}
+
+Issuing HTTP POST Requests (C#):
+//URL encoding is also required for POST requests -- in addition to form encoding, 
+//as shown in the following method:
+
+static string HttpPost(string url, 
+    string[] paramName, string[] paramVal)
+{
+  HttpWebRequest req = WebRequest.Create(new Uri(url)) 
+                       as HttpWebRequest;
+  req.Method = "POST";  
+  req.ContentType = "application/x-www-form-urlencoded";
+
+  // Build a string with all the params, properly encoded.
+  // We assume that the arrays paramName and paramVal are
+  // of equal length:
+  StringBuilder paramz = new StringBuilder();
+  for (int i = 0; i < paramName.Length; i++) {
+    paramz.Append(paramName[i]);
+    paramz.Append("=");
+    paramz.Append(HttpUtility.UrlEncode(paramVal[i]));
+    paramz.Append("&");
+  }
+
+  // Encode the parameters as form data:
+  byte[] formData =
+      UTF8Encoding.UTF8.GetBytes(paramz.ToString());
+  req.ContentLength = formData.Length;
+
+  // Send the request:
+  using (Stream post = req.GetRequestStream())  
+  {  
+    post.Write(formData, 0, formData.Length);  
+  }
+
+  // Pick up the response:
+  string result = null;
+  using (HttpWebResponse resp = req.GetResponse()
+                                as HttpWebResponse)  
+  {  
+    StreamReader reader = 
+        new StreamReader(resp.GetResponseStream());
+    result = reader.ReadToEnd();
+  }
+
+  return result;
+}
