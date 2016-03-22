@@ -12,6 +12,7 @@ int find_missing(vector<int> vec)
     {
         if (vec[i] - vec[i-1] == common_interval)
         {
+            // Interval is same as last interval, must be common
             break;    
         }
         else
