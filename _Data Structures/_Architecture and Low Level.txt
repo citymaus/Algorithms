@@ -1,0 +1,61 @@
+Could you replace the CPU cache with an SRAM? If you can what would be an advantage and disadvantage?
+
+  Yes, we can replace. 
+
+  Advantages: 
+  1. More memory is available on SRAM when compared to cache. 
+  2. Low cost of SRAM. 
+  3. Probability of Instruction-HIT on SRAM is much higher than on Cache. 
+  Disadvantages: 
+  1. Latency in fetching instructions from SRAM is very high when compared to Cache. 
+  2. Even if Large memory is present in SRAM the latency will turn out to be a bottle neck for the processor to execute instruction. 
+
+
+  Thus using a Cache over SRAM and fetching instructions as a bulk from SRAM is more advantageous than directly accessing instructions from SRAM.
+
+---------------------------------------------
+Difference between the stack and the heap?
+
+  Physically stack and heap both are allocated on RAM and their implementation varies from language, compiler and run time 
+
+  Stack is used for local variables of functions and to track function calling sequences. Heap is used for allocating dynamically created variables using malloc, calloc or new. 
+  Stack memory is freed whenever the function completes execution but the heap memory needs to be freed explicitly using delete, free or by garbage collector of the language. 
+
+  Stack memory of a process is fixed size and heap is variable memory. 
+
+  Stack is faster than heap as allocating memory on stack is simpler just moving stack pointer up. 
+
+  In case of multi threading, each thread of process will have a different stack but all threads share single heap
+
+---------------------------------------------
+Stack growing up or down?
+  void checkStackGrowthDirection(){
+
+	  int x = 10;
+	  int y = 10;
+	  int* oldStackBase = &x; 
+	  int* newStackBase = &y;
+
+	  ptrdiff_t offset = oldStackBase - newStackBase;
+
+	  if (offset < 0 ){
+		  cout << "Growing up" << endl;
+	  }
+	  else {
+		  cout << "Growing down" << endl;
+	  }
+  }
+
+-------------------------------------------
+What is virtual memory ? What is the pre-requisite in hardware for supporting virtual memory ?
+
+  The pre-requisite is that the CPU should have a memory management unit (MMU) to support virtual to physical address translation.
+
+-------------------------------------------
+How is endianness determined? OS or CPU architecture?
+
+  Linux on PowerPC is big endian. The same on ARM. 
+  On the PowerPC G4 a process could be little endian while a concurrent process was big endian. 
+  A single bit in the status register of the CPU determined the current endianess.
+-------------------------------------------
+

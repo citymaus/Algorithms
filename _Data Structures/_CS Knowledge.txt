@@ -22,8 +22,7 @@ Pointers don't exist in Java for two reasons. First, pointers are inherently ins
 For example, using a C++ pointer, it is possible to gain access to memory addresses 
 outside a program's code and data. Second, the designer of Java probably think that 
 they were too troublesome.  Since pointers don't exist in Java, neither does the -> 
-operator. Smalltalk, like Java, does not have the notion of pointers. Everything in 
-Smalltalk is passed by reference.
+operator. 
 
 Java does not include structures or unions.  These were felt to be redundant since 
 the class encapsulates them.
@@ -44,13 +43,11 @@ C++ allows default arguments.  This means that you may specify a value that a pa
 will have when there is no argument corresponding  to that parameter when the function 
 is invoked.  Java does not allow default argument.
 
-C++ supports inheritance of multiple superclasses by a subclass which Java and 
-Smalltalk do not.
+C++ supports inheritance of multiple superclasses by a subclass which Java does not.
 
-To derive a class, the keyword "extends" is used in Java as ":" is used in C++.  Smalltalk 
-uses the keyword "subclass" instead.
+To derive a class, the keyword "extends" is used in Java as ":" is used in C++.
 
-The keyword "super" can be used to access the super class in Smalltalk and Java.  
+The keyword "super" can be used to access the super class in Java.  
 In C++, super is being replaced with ::.  Also, in Smalltalk the keyword "self" is
 "this" in Java and C++.
 
@@ -64,17 +61,11 @@ and can point to any object or class.
 
 Polymorphism can be turned on or off in C++ by a keyword virtual.  In Java, polymorphism
 is always on by default.  If one does not want it, the keyword "final" can be used.  
-Smalltalk's polymorphism is always on by default.
 
-You can still write a procedural program using C++, but not in Java and Smalltalk.
-
-//Smalltalk is a interactive environment and lets the programmer view all of the source
-code. As you guessed, this is not the case for the other languages.
+You can still write a procedural program using C++, but not in Java.
 
 In C++ and Java the programmer can specify the access attributes for the variables 
 and methods.  
-//In Smalltalk those are fixed: all variables are protected and all methods
-are public.
 
 C and C++ Security Issues:
 --------------------------
