@@ -198,8 +198,11 @@ LESS COMMON:
 #include <queue>          // Queue header: FIFO queue, priority queue
   empty() 
   size()
-  push(int x)  (back)
-  pop()        (front)
+    // front [][][] back
+  push(int x)  //(back)
+    // front [][][]<-----[] back  (push)
+  pop()        //(front)
+    // front []<-----[][][] back  (pop)
   front()
   back()  
     std::queue<int> myqueue;
