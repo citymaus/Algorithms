@@ -9,7 +9,8 @@ using namespace std;
 /* 
 Your previous Plain Text content is preserved below:
 
-Given an alphabet of letters and an input string, write a function to find the smallest substring in the input which contains all the letters of the alphabet.
+Given an alphabet of letters and an input string, write a function to find the smallest substring 
+in the input which contains all the letters of the alphabet.
 
 Examples:
 alphabet = ['a', 'b', 'c']
@@ -32,7 +33,7 @@ int main() {
 string smallest_substring(string input, char alphabet[])
 {
   //'ab|bac|ca'
-    int numchars = 0;
+    int numalphachars = 0;
     map<char, int> used;
     string firstpass = "";
     string smallest = "";
@@ -40,12 +41,12 @@ string smallest_substring(string input, char alphabet[])
     {
         if (used[input[i]] == 0)
         {           
-          numchars++;
+          numalphachars++;
         }
         used[input[i]]++;
         firstpass += input[i];
         
-        if (numchars == sizeof(alphabet)/sizeof(char))
+        if (numalphachars == sizeof(alphabet)/sizeof(char))
         {
           break;
         }
@@ -54,6 +55,8 @@ string smallest_substring(string input, char alphabet[])
   // firstpass = "abbaac"
     for (int j = 0; j < firstpass.length(); j++)
     {
+      // if there is another instance of this letter to come,
+      // AND smallest subset is still empty
       if ((used[firstpass[j]] > 1) && (smallest.length() == 0))
       {
           used[firstpass[j]]--;       
