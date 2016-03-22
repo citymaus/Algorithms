@@ -17,8 +17,10 @@ string compression(string s)
 			count++;
 			if (count > 1)
 			{
+        // convert number (base 10) to char
 				char buffer[100];
 				char *intStr = itoa(count, buffer, 10);
+        // convert char to string
 				string str = string(intStr);
 				newstr += str;
 			}
@@ -30,7 +32,10 @@ string compression(string s)
 		}
 		p = s[i];
 	}
+  // add last character to string
 	newstr += p;
+
+  // add length to end of string
 	if (count > 0)
 	{
 		char buffer[100];
