@@ -18,7 +18,9 @@ using namespace std;
 /* <iostream>    ()     C library to perform Input/Output operations (header) */
   printf;
   cout;
+    cout << "enter age:\n";
   cin;
+    cin >> age;
   FILE *fopen (const char *filename, const char *mode);
   int fclose (FILE *stream);
   scanf(const char *format, ... );
@@ -36,6 +38,15 @@ using namespace std;
     char szInput[256];
     strlen(szInput);
   char *strcpy (char *destination, const char *source);
+    char str1[]="Sample string";
+    char str2[40];
+    char str3[40];
+    strcpy (str2,str1);
+    strcpy (str3,"copy successful");
+    printf ("str1: %s\nstr2: %s\nstr3: %s\n",str1,str2,str3);
+    // str1: Sample string
+    // str2: Sample string
+    // str3: copy successful
   char *strcat (char *destination, const char *source);
   int strcmp (const char *str1, const char *str2 ) = 0 if strings are equal;
   char *strchr (char *str, int character) = index of first occurence of character, or NULL if not found;
@@ -50,6 +61,11 @@ using namespace std;
       printf ("%s\n",pch);
       pch = strtok (NULL, " ,.-");
     }
+    /* On strtok first call, the function expects a C string as argument for str, 
+       whose first character is used as the starting location to scan for tokens. 
+       In subsequent calls, the function expects a null pointer and uses the 
+       position right after the end of the last token as the new starting 
+       location for scanning. */
   NULL;
 
 /* <cmath>     (math.h)      C numerics library (header) */
