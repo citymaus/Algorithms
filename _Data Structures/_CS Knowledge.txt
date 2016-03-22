@@ -152,12 +152,19 @@ https://www.versionone.com/agile-101/agile-development-quiz/
 
 Designing for Scalability:
 --------------------------
+1. how much additional traffic can it handle, 
+2. how easy is it to add more storage capacity, 
+3. or even how many more transactions can be processed.
+
 http://highscalability.squarespace.com/blog/category/strategy
 - Load balancing (distributing jobs over multiple workers)
 - Data compression (for storing large datasets)
 - Affinity (same clients connect to same servers to make use of caches)
 - SaaS (software as a service--CONCUR)
+http://highscalability.squarespace.com/blog/2015/11/16/9ish-low-latency-strategies-for-saas-companies.html
 - Low latency:
-	 Achieving very low latencies takes special engineering, but if you are a SaaS company 
-	 latencies of a few hundred milliseconds are possible for complex business logic using 
-	 standard technologies like load balancers, queues, JVMs, and rest APIs.
+	Achieving very low latencies takes special engineering, but if you are a SaaS company 
+	latencies of a few hundred milliseconds are possible for complex business logic using 
+	standard technologies like load balancers, queues, JVMs, and rest APIs.
+- Most problem are quite straightforward to solve: 
+	when something is slow, you can either optimize it or parallelize it. 
