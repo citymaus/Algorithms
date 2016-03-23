@@ -1,3 +1,7 @@
+#include <cmath>      // abs
+#include <algorithm>  // max
+using namespace std;
+
 /*
   Implement a function to check if a binary tree is balanced. For the purposes of this
   question, a balanced tree is defined to be a tree such that the heights of the two
@@ -10,9 +14,9 @@ struct TreeNode {
   struct TreeNode *right;
 };
 
-public static int checkHeight(TreeNode *root) 
+int checkHeight(TreeNode *root) 
 {
-  if (root == null) 
+  if (root == NULL) 
   {
     return 0; // Height of 0
   }
@@ -36,18 +40,18 @@ public static int checkHeight(TreeNode *root)
   /* Check if current node is balanced. */
   int heightDiff = leftHeight - rightHeight;
 
-  if (Math.abs(heightDiff) > 1) 
+  if (abs(heightDiff) > 1) 
   {
       return -1; // Not balanced
   } 
   else 
   {
     /* Return height */
-    return Math.max(leftHeight, rightHeight) + 1;
+    return max(leftHeight, rightHeight) + 1;
   }
 }
 
-public static boolean isBalanced(TreeNode *root) 
+bool isBalanced(TreeNode *root) 
 {
   if (checkHeight(root) == -1) {
     return false;
