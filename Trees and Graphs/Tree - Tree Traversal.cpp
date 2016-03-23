@@ -1,4 +1,12 @@
 /*
+
+
+BREADTH-FIRST TRAVERSAL
+Level-order
+1. Init a queue, push the root
+2. While the queue isn't empty, pop front node, print value
+3. If not NULL, push left and right nodes to queue
+
 DEPTH-FIRST TRAVERSAL
 Pre-order
 1. Display the data part of root element (or current element)
@@ -14,10 +22,6 @@ Post-order
 1. Traverse the left subtree by recursively calling the post-order function.
 2. Traverse the right subtree by recursively calling the post-order function.
 3. Display the data part of root element (or current element).
-
-
-BREADTH-FIRST TRAVERSAL
-Level-order
 
 
 */
@@ -43,7 +47,7 @@ void printLevelOrder(node *root)
     nodeQueue.push(root);
     while(!nodeQueue.empty()){
         node *n = nodeQueue.front();
-        nodeQueue.pop();
+        nodeQueue.pop();    // pops the front
         if(NULL == n){
             continue;       // go back to top of the loop
         }
