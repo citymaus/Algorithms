@@ -37,6 +37,7 @@ struct node
     struct node *right;
 };
 
+// Breadth-first order
 void printLevelOrder(node *root)
 {
     if(NULL == root){
