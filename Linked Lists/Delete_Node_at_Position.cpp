@@ -16,9 +16,11 @@ Node* Insert(Node *head,int x)
    {
        return temp;
    }
-   Node *temp1;
-   for(temp1 = head;temp1->next!=NULL;temp1= temp1->next);
-   temp1->next = temp;return head;
+   Node *tail;
+   // Get to the end of the list
+   for(tail = head;tail->next!=NULL;tail= tail->next);
+   tail->next = temp;
+   return head;
 }
 /*
   Delete Node at a given position in a linked list 
