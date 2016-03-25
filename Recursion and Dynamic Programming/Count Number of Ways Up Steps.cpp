@@ -6,7 +6,7 @@
 #include <cstdio>     // cout
 #include <cstring>    // memset
 
-public static int countWaysDP(int n, int map[]) 
+int countWaysDP(int n, int map[]) 
 {
   if (n < 0)  {
     return 0;
