@@ -23,7 +23,7 @@ void findwords(int val)
 void permutation(string prefix, string suffix) 
 {
     if(suffix.length() == 0) 
-        printf("%s", prefix);
+        printf("%s\n", prefix);
     else{
         int numchars = 0;
         char* chars = getChars(suffix[0], numchars);
