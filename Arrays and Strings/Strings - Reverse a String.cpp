@@ -21,14 +21,14 @@ void reverseString()
   cout << "Reverse of entered string is: " << reverse;
 }
 
-void strrev(char *p)
+void strrev(char *beg)
 {
-  char *q = p;
-  while(q && *q) ++q;
-  for(--q; p < q; ++p, --q)
-    *p = *p ^ *q,
-    *q = *p ^ *q,
-    *p = *p ^ *q;
+  char *end = beg;
+  while(end && *end) ++end;
+  for(--end; beg < end; ++beg, --end)
+    *beg = *beg ^ *end,
+    *end = *beg ^ *end,
+    *beg = *beg ^ *end;
 }
 
 /* PRE: str must be either NULL or a pointer to a 
