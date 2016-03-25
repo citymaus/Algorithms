@@ -40,7 +40,7 @@ int checkHeight(TreeNode *root)
   /* Check if current node is balanced. */
   int heightDiff = leftHeight - rightHeight;
 
-  if (abs(heightDiff) > 1) 
+  if (abs(heightDiff) > 1) // Cannot differ by more than one, according to instructions
   {
       return -1; // Not balanced
   } 
