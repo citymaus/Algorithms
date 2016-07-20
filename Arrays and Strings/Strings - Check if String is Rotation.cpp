@@ -8,7 +8,7 @@ using namespace std;
 string is_rotation(string s1, string s2)
 {
   /*
-    si = xy = waterbottle
+    s1 = xy = waterbottle
     x = wat
     y = erbottle
     s2 = yx = erbottlewat
