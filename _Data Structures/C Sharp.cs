@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections;           // Stack + Queue
+using System.Collections.Generic;   // Dictionary
 
 public class Program
 {
@@ -14,10 +14,18 @@ public class Program
     string[] names = new string[2];
     int[] numbers = new int[5] { 4, 3, 8, 0, 5 };
 
-    Stack s = new Stack();
-    s.push("{");
-    s.pop();
-    s.peek();
+    Stack<string> s = new Stack<string>();
+    s.Push("{");
+    s.Pop();
+    s.Peek();
+    Queue<string> numbers = new Queue<string>();
+    numbers.Enqueue("one");
+    numbers.Enqueue("two");
+    numbers.Enqueue("three");
+    numbers.Enqueue("four");
+    numbers.Enqueue("five");
+    numbers.Peek();
+    Queue<string> queueCopy = new Queue<string>(numbers.ToArray());
 
     Console.Write(" " + var);
     Console.WriteLine("");
