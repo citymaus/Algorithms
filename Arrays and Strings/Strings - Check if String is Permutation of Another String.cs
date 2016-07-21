@@ -28,7 +28,7 @@ namespace Permutations
         // enter the chars and the number of times each of them appears
         for (int i = 0; i < str1.length(); i++) 
         {
-            if (sthashMapChars.ContainsKey(str1[i])) 
+            if (hashMapChars.ContainsKey(str1[i])) 
             {
                 hashMapChars[str[i]] += 1;
             } 

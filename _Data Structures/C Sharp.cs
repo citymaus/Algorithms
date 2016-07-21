@@ -8,8 +8,10 @@ public class Program
   {
     
     Dictionary<char, int> dict = new Dictionary<char, int>();
-    dict.ContainsKey(lskdjfklsdf);
-    dict[key] = value;
+	dict.Add('n', 2);
+    dict.ContainsKey('n');
+	char key = 'n';
+    dict[key] = 324;
 
     string[] names = new string[2];
     int[] numbers = new int[5] { 4, 3, 8, 0, 5 };
