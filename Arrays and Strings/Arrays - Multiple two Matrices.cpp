@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 /*
-A = [ a, b, c ]    {r:1,c:3}
-B = [ x            {r:3,c:1}
+A = [ a, b, c ]    {r:1,c:3} 1x3
+B = [ x            {r:3,c:1} 3x1
       y
       z ]
 
-AB = [ a*x + b*y + c*z ]
-BA = [ x*a, x*b, x*c ]
+AB = [ a*x + b*y + c*z ]   1x1
+BA = [ x*a, x*b, x*c ]     3x3
      [ y*a, y*b, y*c ]
      [ z*a, z*b, z*c ]
 */
