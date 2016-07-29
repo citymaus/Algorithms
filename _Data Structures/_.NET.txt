@@ -1,0 +1,109 @@
+.NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows. 
+It includes a large class library known as Framework Class Library (FCL) and provides language interoperability (each language 
+can use code written in other languages) across several programming languages. Programs written for .NET Framework execute in a 
+software environment (as contrasted to hardware environment) known as Common Language Runtime (CLR), an application virtual machine 
+that provides services such as security, memory management, and exception handling. (As such, computer code written using .NET Framework 
+is called "managed code".) FCL and CLR together constitute .NET Framework.
+
+
+----------------------
+.NET Design principles
+----------------------
+
+Interoperability
+----------------
+Because computer systems commonly require interaction between newer and older applications, .NET Framework provides means to access 
+functionality implemented in newer and older programs that execute outside .NET environment. Access to COM components is provided in 
+System.Runtime.InteropServices and System.EnterpriseServices namespaces of the framework. Access to other functionality is achieved 
+using the P/Invoke feature.
+
+Language independence
+----------------------
+.NET Framework introduces a Common Type System (CTS) that defines all possible data types and programming constructs supported by CLR 
+and how they may or may not interact with each other conforming to CLI specification. Because of this feature, .NET Framework supports 
+the exchange of types and object instances between libraries and applications written using any conforming .NET language.
+
+Type safety
+-----------
+The CTS and the CLR used in .NET Framework also enforces type safety. This prevents ill-defined casts, wrong method invocations and 
+memory size issues when accessing an object. This also makes most CLI languages statically typed (with or without type inference). 
+However, beginning with .NET Framework 4.0, the Dynamic Language Runtime extended the CLR allowing dynamically typed languages to be 
+implemented on top of the CLI.
+
+Portability
+-----------
+While Microsoft has never implemented the full framework on any system except Microsoft Windows, it has engineered the framework to 
+be platform-agnostic,[38] and cross-platform implementations are available for other operating systems (see Silverlight and § Alternative 
+implementations). Microsoft submitted the specifications for CLI (which includes the core class libraries, CTS, and CIL),[39][40][41] C#,[42] 
+and C++/CLI[43] to both ECMA and ISO, making them available as official standards. This makes it possible for third parties to create 
+compatible implementations of the framework and its languages on other platforms.
+
+Security
+--------
+.NET Framework has its own security mechanism with two general features: Code Access Security (CAS), and validation and verification. 
+CAS is based on evidence that is associated with a specific assembly. Typically the evidence is the source of the assembly (whether 
+it is installed on the local machine or has been downloaded from the intranet or Internet). CAS uses evidence to determine the permissions 
+granted to the code. Other code can demand that calling code be granted a specified permission. The demand causes CLR to perform a call 
+stack walk: every assembly of each method in the call stack is checked for the required permission; if any assembly is not granted the 
+permission a security exception is thrown.
+
+Managed CIL bytecode is easier to reverse-engineer than native code, unless obfuscated.[44][45] NET decompiler programs enable developers 
+with no reverse-engineering skills to view the source code behind unobfuscated .NET assemblies. In contrast, apps compiled to native machine 
+code are much harder to reverse-engineer, and source code is almost never produced successfully, mainly because of compiler optimizations 
+and lack of reflection.[citation needed] One concern is over possible loss of trade secrets and the bypassing of license control mechanisms. 
+To mitigate this, Microsoft has included Dotfuscator Community Edition with Visual Studio .NET since 2002.[b] Third-party obfuscation tools 
+are also available from vendors such as vmware, V.i. Labs, Xenocode, and Red Gate Software. Method-level encryption tools for .NET code are 
+available from vendors such as SafeNet.
+
+Memory management
+-----------------
+CLR frees the developer from the burden of managing memory (allocating and freeing up when done); it handles memory management itself by 
+detecting when memory can be safely freed. Instantiations of .NET types (objects) are allocated from the managed heap; a pool of memory 
+managed by CLR. As long as there exists a reference to an object, which might be either a direct reference to an object or via a graph 
+of objects, the object is considered to be in use. When there is no reference to an object, and it cannot be reached or used, it becomes 
+garbage, eligible for collection.
+
+.NET Framework includes a garbage collector (GC) which runs periodically, on a separate thread from the application's thread, that 
+enumerates all the unusable objects and reclaims the memory allocated to them. It is a non-deterministic, compacting, mark-and-sweep 
+garbage collector. GC runs only when a certain amount of memory has been used or there is enough pressure for memory on the system. 
+Since it is not guaranteed when the conditions to reclaim memory are reached, GC runs are non-deterministic. Each .NET application has 
+a set of roots, which are pointers to objects on the managed heap (managed objects). These include references to static objects and 
+objects defined as local variables or method parameters currently in scope, as well as objects referred to by CPU registers.[46] When 
+GC runs, it pauses the application and then, for each object referred to in the root, it recursively enumerates all the objects reachable 
+from the root objects and marks them as reachable. It uses CLI metadata and reflection to discover the objects encapsulated by an object, 
+and then recursively walk them. It then enumerates all the objects on the heap (which were initially allocated contiguously) using 
+reflection. All objects not marked as reachable are garbage.[46] This is the mark phase.[47] Since the memory held by garbage is not of 
+any consequence, it is considered free space. However, this leaves chunks of free space between objects which were initially contiguous. 
+The objects are then compacted together to make free space on the managed heap contiguous again.[46][47] Any reference to an object 
+invalidated by moving the object is updated by GC to reflect the new location.[47] The application is resumed after the garbage collection 
+is over. The latest version of .NET framework uses concurrent garbage collection along with user code, making pauses unnoticeable, because 
+it is done in the background.[48]
+
+GC used by .NET Framework is also generational.[49] Objects are assigned a generation; newly created objects belong to Generation 0. The 
+objects that survive a garbage collection are tagged as Generation 1, and the Generation 1 objects that survive another collection are 
+Generation 2 objects. .NET Framework uses up to Generation 2 objects.[49] Higher generation objects are garbage collected less frequently 
+than lower generation objects. This helps increase the efficiency of garbage collection, as older objects tend to have a longer lifetime 
+than newer objects.[49] Thus, by eliminating older (and thus more likely to survive a collection) objects from the scope of a collection 
+run, fewer objects need to be checked and compacted.[49]
+
+Simplified deployment
+---------------------
+.NET Framework includes design features and tools which help manage the installation of computer software to ensure that it does not 
+interfere with previously installed software, and that it conforms to security requirements.[citation needed]
+
+Performance
+-----------
+When an application is first launched, the .NET Framework compiles the CIL code into executable code using its just-in-time compiler, 
+and caches the executable program into the .NET Native Image Cache.[50][51] Due to caching, the application launches faster for 
+subsequent launches, although the first launch is usually slower. To increase speed of the first launch, developers may use the Native 
+Image Generator utility to manually compile and cache any .NET application, ahead-of-time.[51]
+
+The garbage collector, which is integrated into the environment, can introduce unanticipated delays of execution over which the developer 
+has little direct control. "In large applications, the number of objects that the garbage collector needs to deal with can become very 
+large, which means it can take a very long time to visit and rearrange all of them."[52]
+
+.NET Framework provides support for calling Streaming SIMD Extensions (SSE) via managed code from April 2014 in Visual Studio 2013 
+Update 2. However, Mono has provided support for SIMD Extensions as of version 2.2 within the Mono.Simd namespace; before. Mono's lead 
+developer Miguel de Icaza has expressed hope that this SIMD support will be adopted by CLR's ECMA standard.[53] Streaming SIMD Extensions 
+have been available in x86 CPUs since the introduction of the Pentium III. Some other architectures such as ARM and MIPS also have SIMD 
+extensions. In case the CPU lacks support for those extensions, the instructions are simulated in software.[citation needed]
