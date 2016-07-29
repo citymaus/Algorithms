@@ -1,73 +1,149 @@
 using System;
 using System.Collections;           // Stack + Queue
 using System.Collections.Generic;   // Dictionary
+using NUnit.Framework;
+using System.Linq;
 
 public class Program
 {
-  public static void Main(string[] args)
-  {
+      public static void Main(string[] args)
+      {
+        int[] myIntArray = new int[5];
+        int[] myIntArray2 = { 0, 1, 2, 3, 4 };
+
+        string[] names = new string[2];
+        int[] numbers = new int[5] { 4, 3, 8, 0, 5 };
+
+        ArrayList list = new ArrayList();
+        list.Add("John Doe");
+        list.Add("Jane Doe");
+        list.Add("Someone Else");
+        foreach (string name in list)
+        // Must cast values back on retrieval
+        int arrayListValue = (int)myArrayList[0];
+        Console.WriteLine(name);
+        List<int> intList = new List<int>();
+        intList.Add(45);
+        intList.Add(34);
+        // No cast needed.
+        int listValue = intList[0];
+
+        Dictionary<char, int> dict = new Dictionary<char, int>();
+	    dict.Add('n', 2);
+        dict.ContainsKey('n');
+	    char key = 'n';
+        dict[key] = 324;
+        List<string> keyList = new List<string>(myDictionary.Keys);
+        for (int i = 0; i < keyList.Count; i++)
+        {
+            int myInt = myDictionary[keyList[i]];
+        }
+        // Untyped
+        Hashtable myTable = new Hashtable();
+
+        HashSet<int> mySet = new HashSet<int>();
+        mySet.Add(3);
+        mySet.Add(5);
+        mySet.Add(3);   // Ignored, HashSet does not allow duplicate values.
+        mySet.Add(10);
+        List<int> myListFromSet = mySet.ToList<int>();
+        int myInt = myListFromSet[2];
+
+        Stack<string> s = new Stack<string>();
+        s.Push("{");
+        s.Pop();
+        s.Peek();
+        s.Count;
+        Queue<string> numbers = new Queue<string>();
+        numbers.Enqueue("one");
+        numbers.Enqueue("two");
+        numbers.Enqueue("three");
+        numbers.Enqueue("four");
+        numbers.Enqueue("five");
+        numbers.Peek();
+        numbers.Count;
+        Queue<string> queueCopy = new Queue<string>(numbers.ToArray());
+
+        Console.Write(" " + var);
+        Console.WriteLine("");
+        int line;
+        line = int.Parse(Console.ReadLine());
+
+        public enum Days { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+        Days day = Days.Monday;
     
-    Dictionary<char, int> dict = new Dictionary<char, int>();
-	dict.Add('n', 2);
-    dict.ContainsKey('n');
-	char key = 'n';
-    dict[key] = 324;
+      }
 
-    string[] names = new string[2];
-    int[] numbers = new int[5] { 4, 3, 8, 0, 5 };
-
-    Stack<string> s = new Stack<string>();
-    s.Push("{");
-    s.Pop();
-    s.Peek();
-    Queue<string> numbers = new Queue<string>();
-    numbers.Enqueue("one");
-    numbers.Enqueue("two");
-    numbers.Enqueue("three");
-    numbers.Enqueue("four");
-    numbers.Enqueue("five");
-    numbers.Peek();
-    Queue<string> queueCopy = new Queue<string>(numbers.ToArray());
-
-    Console.Write(" " + var);
-    Console.WriteLine("");
-    int line;
-    line = int.Parse(Console.ReadLine());
-
-    public enum Days { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
-    Days day = Days.Monday;
-
-    ArrayList list = new ArrayList();
-    list.Add("John Doe");
-    list.Add("Jane Doe");
-    list.Add("Someone Else");
-    foreach (string name in list)
-      Console.WriteLine(name);
-  }
-
-  abstract class FourLeggedAnimal
-  {
-    public abstract string Describe();
-    public int AgeInMonths { get; set; }    // Property
-  }
-
-
-  class Dog : FourLeggedAnimal
-  {
-
-    public override string Describe()
+    public void LinqStuff()
     {
-      return "I'm a dog!";
-    }
-  }
+    /*
+     *  LINQ to Objects
+        LINQ to XML(XLINQ)
+        LINQ to DataSet
+        LINQ to SQL (DLINQ)
+        LINQ to Entities
+     * */
+    string[] words = { "hello", "wonderful", "LINQ", "beautiful", "world" };
+        //Get only short words
+        var shortWords = from word in words
+                         where word.Length <= 5
+                         select word;
+	    
+	     //Print each word out
+	     foreach (var word in shortWords)
+	     {
+	 	    Console.WriteLine(word);
+	     }
+         Console.ReadLine();
 
-  class Cat : FourLeggedAnimal
-  {
-    public override string Describe()
-    {
-      return "I'm a cat!";
-    }
-  }
+    /* CONVERTS THIS: */
+    SqlConnection sqlConnection = new SqlConnection(connectString);
+    SqlConnection.Open();
+    System.Data.SqlClient.SqlCommand sqlCommand = new SqlCommand();
+    sqlCommand.Connection = sqlConnection;
+    sqlCommand.CommandText = "Select * from Customer";
+    return sqlCommand.ExecuteReader(CommandBehavior.CloseConnection)
+
+    /* TO THIS: */
+    Northwind db = new Northwind(@"C:\Data\Northwnd.mdf");
+    var query = from c in db.Customers
+                select c;
+
+    var list = (from e in employees
+                join d in departments on e.DepartmentId equals d.DepartmentId
+                select new
+                {
+                    EmployeeName = e.EmployeeName,
+                    DepartmentName = d.Name
+                });
+    var posNumsDesc = from n in num
+                      orderby n descending
+                      select n;
+}
+
+      abstract class FourLeggedAnimal
+      {
+        public abstract string Describe();
+        public int AgeInMonths { get; set; }    // Property
+      }
+
+
+      class Dog : FourLeggedAnimal
+      {
+
+        public override string Describe()
+        {
+          return "I'm a dog!";
+        }
+      }
+
+      class Cat : FourLeggedAnimal
+      {
+        public override string Describe()
+        {
+          return "I'm a cat!";
+        }
+      }
 }
 
 
@@ -108,8 +184,8 @@ public class Program
  */
 #endregion
 
-using System;
-using NUnit.Framework;
+//using System;
+//using NUnit.Framework;
 
 namespace CarPricer
 {

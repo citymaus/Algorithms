@@ -12,6 +12,66 @@ To be pedantic, there are 7 different valid -O options you can give to gcc, thou
    -falign-loops -falign-labels -freorder-blocks -freorder-blocks-and-partition 
    -fprefetch-loop-arrays -ftree-vect-loop-version)
 
+Differences between C++ and C#
+------------------------------
+	Pro C#:
+	-------
+	garbage collection
+	array bounds checking
+	huge .NET-Framework library
+	types have a defined size (e.g. a long is 64Bit)
+	strings are encoded in UTF/16
+	autoboxing – every type can be treated as if it inherits from object
+	supports constructor-chaining (one constructor can call another constructor from the same class)
+	when a virtual method is called in a constructor, the method in the most derived class is used
+	static constructors (run before the first instance of the class is created)
+	exceptions have access to a stack trace
+	advanced runtime type information and reflection
+	supports variadic functions nicely
+	built-in support for threads
+	no need for header files and #includes
+	no fall-through on switch-statements
+	arithmetic operations can be checked for overflow if required
+	objects must have a definite value before being used
+	attributes can be attached to classes and retrieved at runtime
+	no forward declarations required, classes can be arranged at will
+	access to class members / functions is done only by the dot (no more -> or ::)
+	conditional functions (e.g. for debugging)
+	structs and classes are actually different (structs are value types, have no default constructor in general cannot be derived from)
+	supports properties
+	readonly members are const, but can be changed in the constructor
+	finally block for exceptions
+	arrays are objects
+	support for anonymous functions
+	supports the base keyword for calling the overridden base class
+
+	Pro C++
+	-------
+	better performance
+	portability
+	multiple inheritance
+	deterministic destruction (allows RAII)
+	any type can be thrown as exception (only classes derived from System.Exception in C#)
+	ability to enforce const-correctness
+	implicit interfaces on generics (in C#, generics must be constrained with an interface)
+	offers pointers (C# only offers pointers in unsafe mode)
+	support for macros
+	support for global variables, functions, constants
+	allows default arguments on function parameters
+	STL
+	supports bitfields
+
+	Where C# is just different from C++
+	-----------------------------------
+	value types and reference types exist (struct is value-type, class is reference-type)
+	value types live on the stack, reference types on the heap
+	references can point to null (must not be valid)
+	code is packaged in assemblies in C#
+	no automatic conversion from int to bool in C#
+	main-function is called Main in C#
+	no semicolon after a class declaration in C#
+	everything derives from object or can be treated as if
+
 Differences between C++ and Java
 --------------------------------
 There are a number of C++ features that Java does not support. Perhaps the single 
