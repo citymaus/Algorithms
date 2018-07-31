@@ -9,8 +9,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
     <Filter Include="tests">
-      <UniqueIdentifier>{85bf2943-ffd2-4d70-aa53-ab3677056904}</UniqueIdentifier>
+      <UniqueIdentifier>{e754571e-046e-44c8-b4fc-dad3f78168d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,11 +37,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\tests\strings-compression.txt">
+    <Text Include="..\tests\strings-compression.txt">
       <Filter>tests</Filter>
-    </None>
-    <None Include="..\tests\strings-replace_spaces.txt">
+    </Text>
+    <Text Include="..\tests\strings-replace_spaces.txt">
       <Filter>tests</Filter>
-    </None>
+    </Text>
   </ItemGroup>
 </Project>
