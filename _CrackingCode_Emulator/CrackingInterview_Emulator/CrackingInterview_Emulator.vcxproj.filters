@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="tests">
-      <UniqueIdentifier>{e754571e-046e-44c8-b4fc-dad3f78168d5}</UniqueIdentifier>
+      <UniqueIdentifier>{da7e69a6-10ba-4a64-a153-e4f667681d70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +41,18 @@
       <Filter>tests</Filter>
     </Text>
     <Text Include="..\tests\strings-replace_spaces.txt">
+      <Filter>tests</Filter>
+    </Text>
+    <Text Include="..\tests\strings-rotate.txt">
+      <Filter>tests</Filter>
+    </Text>
+    <Text Include="..\tests\strings-rotatestr.txt">
+      <Filter>tests</Filter>
+    </Text>
+    <Text Include="..\tests\strings-setzero.txt">
+      <Filter>tests</Filter>
+    </Text>
+    <Text Include="..\tests\out.txt">
       <Filter>tests</Filter>
     </Text>
   </ItemGroup>

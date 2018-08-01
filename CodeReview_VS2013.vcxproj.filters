@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Arrays and Strings">
+      <UniqueIdentifier>{928d7506-ee12-40c1-b67b-8c35d9df5244}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Bit Manipulation">
+      <UniqueIdentifier>{f57dd88d-aefc-490f-b8d6-81e1a6bf63cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Linked Lists">
+      <UniqueIdentifier>{95f8e56e-76a2-44c9-a329-544969e9aa18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mathematics and Probability">
+      <UniqueIdentifier>{dcb82c6c-524f-4417-8c31-70bbdca50a2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object Oriented Design">
+      <UniqueIdentifier>{90cea4e5-e415-488a-b351-22955afc15c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queues and Stacks">
+      <UniqueIdentifier>{92e0063e-d600-4d45-b7fa-9836b7fe8d3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Recursion and Dynamic Programming">
+      <UniqueIdentifier>{01fb7f86-8694-4f0d-ae63-b2a793efaaaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sorting and Searching">
+      <UniqueIdentifier>{840da7e1-7001-480e-9db6-f2fc9ce8ac3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Testing">
+      <UniqueIdentifier>{05cbd068-f534-4ed4-ac86-504602cdfc15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Trees and Graphs">
+      <UniqueIdentifier>{6332dc82-db4c-4a37-8aeb-8bb6254c56c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Arrays and Strings\String - Find Smallest Substring with all Alphabet Chars.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Check if String is Rotation.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Check if String is Substring.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Check of Parentheses are Balanced.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Compress String.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Create Strings in Telephone Number.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Find First Non-repeating Character.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Has all Unique Chars.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Replace Spaces.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Reverse a String.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Reverse Words in a String.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Simple Regex.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Strstr.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Find a Missing Number in Arithmetic Sequence.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Find Most Popular Integer.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Largest Contiguous Sum.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Move Zeros to End.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Multiple two Matrices.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Rotate Matrix Image.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Set Zeros in Matrix.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Manipulation\Print Next Smallest and Next Largest Int.cpp">
+      <Filter>Source Files\Bit Manipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Manipulation\Represent Double as Binary.cpp">
+      <Filter>Source Files\Bit Manipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Manipulation\Swap Even and Odd Bits.cpp">
+      <Filter>Source Files\Bit Manipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Manipulation\Convert Int A to Int B.cpp">
+      <Filter>Source Files\Bit Manipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Manipulation\Find Endianness.cpp">
+      <Filter>Source Files\Bit Manipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Manipulation\Insert one Int into Another.cpp">
+      <Filter>Source Files\Bit Manipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Find_Nth_Node_from_End.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Get_Node_Value_From_Tail.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Insert_Node_at_Head.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Insert_Node_at_Position.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Insert_Node_at_Tail.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Insert_Node_Sorted_Doubly_Linked_List.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Is_Palindrome.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Merge_Two_Sorted_Lists.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Print_Elements.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Reverse_a_Doubly_Linked_List.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Reverse_a_Linked_List.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Reverse_Print.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Add_Digits_In_Linked_List.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Compare_Two_Linked_Lists.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Delete_Duplicates.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Delete_Node_at_Position.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Detect_Cycle.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Linked Lists\Find_Merge_Point_of_Two_Linked_Lists.cpp">
+      <Filter>Source Files\Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathematics and Probability\Kth number with certain primes.cpp">
+      <Filter>Source Files\Mathematics and Probability</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathematics and Probability\Math operations with only Add.cpp">
+      <Filter>Source Files\Mathematics and Probability</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathematics and Probability\All primes up to N.cpp">
+      <Filter>Source Files\Mathematics and Probability</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathematics and Probability\Choosing basketball game.cpp">
+      <Filter>Source Files\Mathematics and Probability</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree - Check if Balanced.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree - Tree Traversal.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Calculate Height.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Check if Tree is Binary Search Tree.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Create from Sorted Array.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Create Linked List of Nodes at Depth d.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Find all Sums.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Find Common Ancestor.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Find Longest Diameter Between Nodes.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Find Next Node in BST.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Tree(Binary) - Is Tree A a Subtree of Tree B.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Graph(Directed) - Find Path.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Graph(Directed, Unweighted) - Detect Cycle.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Graph(Unweighted) - Structure, DFS, BFS - Skiena.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Graph(Weighted) - Minimum Spanning Tree (lowest distance) - Skiena.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees and Graphs\Graph(Weighted) - Shortest Path - Djikstra - Skiena.cpp">
+      <Filter>Source Files\Trees and Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Merge Sort - Array - Skiena.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Merge Sort - Linked List.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Quick Sort - Lomuto+Hoare.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Quick Sort - Skiena.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Selection Sort - Skiena.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Bubble Sort.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Heap Sort.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting and Searching\Insertion Sort - Skiena.cpp">
+      <Filter>Source Files\Sorting and Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\Magic Array Indexes.cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\Robot Path on Grid.cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\Towers of Hanoi (unfinished).cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\All Subsets of a Set.cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\Boggle Solver.cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\Count Number of Ways Up Steps.cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion and Dynamic Programming\Fibonacci Sequence - Skiena.cpp">
+      <Filter>Source Files\Recursion and Dynamic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Implement_Stack_with_Queues.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Set_of_Stacks.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Sort_a_Stack.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Stack_Find_Min_Element_O(1).cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Stack_Operations_Prefix.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Stack_Towers_of_Hanoi.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Implement_Queue_with_Age.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Implement_Queues_with_Two_Stacks.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues and Stacks\Implement_Stack_with_Array.cpp">
+      <Filter>Source Files\Queues and Stacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Object Oriented Design\Design a Poker Game.cpp">
+      <Filter>Source Files\Object Oriented Design</Filter>
+    </ClCompile>
+    <ClCompile Include="Object Oriented Design\Design a File System.cpp">
+      <Filter>Source Files\Object Oriented Design</Filter>
+    </ClCompile>
+    <ClCompile Include="Object Oriented Design\Design a Hash Table.cpp">
+      <Filter>Source Files\Object Oriented Design</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cs">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Testing\Testing.txt">
+      <Filter>Source Files\Testing</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
