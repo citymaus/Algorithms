@@ -26,6 +26,7 @@ void print_array(int arr[][100], int N)
 
 //https://www.geeksforgeeks.org/check-if-a-string-can-be-formed-from-another-string-using-given-constraints/
 bool string_in_a_string(string s1, string s2)
+{
 	unordered_map<char, int> map;
 
 	for (int i = 0; i < s1.size(); i++) {
