@@ -52,7 +52,7 @@
     <Text Include="..\tests\strings-setzero.txt">
       <Filter>tests</Filter>
     </Text>
-    <Text Include="..\tests\out.txt">
+    <Text Include="..\tests\strings-inastring.txt">
       <Filter>tests</Filter>
     </Text>
   </ItemGroup>

@@ -8,6 +8,7 @@
 #include <cstring>
 #include "Arrays_and_Strings.h"
 #include "file_handler.h"
+#include <unordered_map>;
 using namespace std;
 
 
@@ -21,6 +22,28 @@ void print_array(int arr[][100], int N)
     }
     cout << endl;
   }
+}
+
+//https://www.geeksforgeeks.org/check-if-a-string-can-be-formed-from-another-string-using-given-constraints/
+bool string_in_a_string(string s1, string s2)
+	unordered_map<char, int> map;
+
+	for (int i = 0; i < s1.size(); i++) {
+		map[s1[i]]++;
+	}
+
+	for (int i = 0; i < s2.size(); i++) {
+		if (map[s2[i]]) {
+			map[s2[i]]--;
+		} else if (map[s2[i]-1] && map[s2[i]-2]) {
+			map[s2[i] - 1]--;
+			map[s2[i] - 2]--;
+		}
+		else {
+			return false;
+		}		
+	}
+	return true;
 }
 
 string replace_spaces(string s)

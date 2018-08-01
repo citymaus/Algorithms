@@ -7,17 +7,16 @@
 #include <ctime>
 #include "file_handler.h"
 #include "Arrays_and_Strings.h"
-using namespace std;
-
+using namespace std; 
 
 int main() {
     
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 	int start_s=clock();
-
+	
 	// Change these based on challenge.
 	string category = "strings";
-	string testname = "rotatestr";
+	string testname = "inastring";
 	string testinput = category + "-" + testname + ".txt";
 	FileHandler* filereader = new FileHandler(testinput);
 
@@ -27,21 +26,22 @@ int main() {
 #undef    VECTOR_INPUT
 
 #undef   ARRAY_OUTPUT
-#define    VAR_OUTPUT
+#undef    VAR_OUTPUT
+#define	 BOOL_OUTPUT
 
   int n;
 	int r;
 	int t;
 	int pairs;
-	string s1, s2, result;
+	string s1, s2, string_result;
+	bool bool_result;
   cin >> n;
 
 #ifdef LINE_INPUT
   // Grab line input
 	getline(cin, s);
 #endif
-#ifdef ARRAY_INPUT
-  
+#ifdef ARRAY_INPUT  
   int arr[100][100];
   memset(arr, 0, sizeof(arr));
 
@@ -73,7 +73,8 @@ int main() {
   //--------------------------------------------------
   // Current solution function
   //--------------------------------------------------
-  result = is_rotation(s1, s2);
+  bool_result = string_in_a_string(s1, s2);
+ // string_result = is_rotation(s1, s2);
 
   
   //--------------------------------------------------
@@ -84,38 +85,16 @@ int main() {
   print_array(arr, n);
 #endif
 #ifdef VAR_OUTPUT
-  cout << result << endl;
+  cout << string_result << endl;
 #endif
-
-	//cout << rotate_image(arr, n) << endl;
-//    string row, s;
-    //unsigned int input;
-	//unsigned int opers;
-    //cin >> n;    
-    //cin >> T;
-	//vector <int> countme;
-    //vector <string> thestrings;
-	/*for (int j = 0; j < T; j++)
-	{
-		//cout << "TESTCASE " << j << ":" << endl;
-		cin >> n;
-        vector <int> v;
-		for(int i = 0; i < n; i++) 
-		{
-			//cin >> input;
-			opers = current_level::current_test(input);
-			cout << opers << endl; 
-			cin >> r;
-			v.push_back(r);
-			//thestrings.push_back(s);
-		}
-		ArraysSorting::quick_sort4(v, 0, v.size()-1);
-        //ArraysSorting::print_arr(v);
-        //cout << endl;
-        pairs = current_level::current_test(v);
-        cout << pairs << endl;
-	}
-  */
+#ifdef BOOL_OUTPUT
+  if (bool_result) {
+	  cout << "TRUE" << endl;
+  }
+  else {
+	  cout << "FALSE" << endl;
+  }
+#endif
 
   // End tests
 	int stop_s=clock();
