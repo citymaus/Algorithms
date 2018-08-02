@@ -38,7 +38,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath);$(ProjectDir)\_Headers</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -71,6 +73,7 @@
     <ClCompile Include="Arrays and Strings\Arrays - Multiple two Matrices.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Rotate Matrix Image.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Set Zeros in Matrix.cpp" />
+    <ClCompile Include="Arrays and Strings\Arrays - Two Sum.cpp" />
     <ClCompile Include="Arrays and Strings\String - Find Smallest Substring with all Alphabet Chars.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Check if String is Rotation.cpp" />
@@ -162,6 +165,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Testing\Testing.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_Headers\Arrays_and_Strings.h" />
+    <ClInclude Include="_Headers\Trees_and_Graphs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

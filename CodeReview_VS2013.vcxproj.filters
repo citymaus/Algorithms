@@ -321,6 +321,9 @@
     <ClCompile Include="Object Oriented Design\Design a Hash Table.cpp">
       <Filter>Source Files\Object Oriented Design</Filter>
     </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Two Sum.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cs">
@@ -331,5 +334,13 @@
     <Text Include="Testing\Testing.txt">
       <Filter>Source Files\Testing</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_Headers\Arrays_and_Strings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Headers\Trees_and_Graphs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

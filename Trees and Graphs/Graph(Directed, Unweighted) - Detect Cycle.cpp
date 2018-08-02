@@ -4,13 +4,7 @@
 	
 		*Singly linked list
 */
-
-
-struct Node
-{
-    int data;
-    struct Node *next;
-}
+#include "Trees_and_Graphs.h"
 
 int Floyds_Has_Cycle(Node* head)
 {

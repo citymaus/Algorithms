@@ -1,30 +1,17 @@
-#define MAXV		1000	/* maximum number of vertices */
-
-struct edgenode {
-	int y;					/* adjacency info */
-	int weight;				/* edge weight, if any */
-	struct edgenode *next;	/* next edge in list */
-};
-
-struct graph {
-	edgenode *edges[MAXV+1];	/* adjacency info */
-	int degree[MAXV+1];			/* outdegree of each vertex */
-	int nvertices;				/* number of vertices in graph */
-	int nedges;					/* number of edges in graph */
-	bool directed;				/* is the graph directed? */
-};
-
 /* 
 	Minimum Spanning Tree - Prim's Algorithm
 	O(n^2) - 
 	O(m + n*lg(n)) - priority queue data structures
 */
+#include "Trees_and_Graphs.h"
+
 void prim(graph *g, int start)
 {
 	int i;					/* counter */
 	edgenode *p;			/* temporary pointer */
 	bool intree[MAXV+1];	/* is the vertex in the tree yet? */
 	int distance[MAXV+1];	/* cost of adding to tree */
+	int parent[MAXV + 1];
 	int v;					/* current vertex to process */
 	int w;					/* candidate next vertex */
 	int weight;				/* edge weight */
@@ -32,23 +19,23 @@ void prim(graph *g, int start)
 	
 	for (i = 1; i <= g->nvertices; i++)
 	{
-		intree[i] = FALSE;
-		distance[i] = MAXINT;
+		intree[i] = false;
+		distance[i] = INT_MAX;
 		parent[i] = -1;
 	}
 	
 	distance[start] = 0;
 	v = start;
 	
-	while (intree[v] == FALSE)
+	while (intree[v] == false)
 	{
-		intree[v] = TRUE;
+		intree[v] = true;
 		p = g->edges[v];
 		while (p != NULL) 
 		{
 			w = p->y;
 			weight = p->weight;
-			if ((distance[w] > weight) && (intree[w] == FALSE))
+			if ((distance[w] > weight) && (intree[w] == false))
 			{
 				distance[w] = weight;
 				parent[w] = v;
@@ -57,10 +44,10 @@ void prim(graph *g, int start)
 		}
 		
 		v = 1;
-		dist = MAXINT;
+		dist = INT_MAX;
 		for (i = 1; i <= g->nvertices; i++)
 		{
-			if ((intree[i] == FALSE) && (dist > distance[i]))
+			if ((intree[i] == false) && (dist > distance[i]))
 			{
 				dist = distance[i];
 				v = i;
@@ -96,10 +83,4 @@ void kruskal(graph *g)
 		}
 	}
 }
-
-struct set_union {
-	int p[SET_SIZE+1];		/* parent element */
-	int size[SET_SIZE+1];	/* number of elements in subtree i */
-	int n;					/* number of elements in set */
-};
 

@@ -6,17 +6,10 @@
   
   - Breadth first search can also be useful to find the shortest path, whereas depth first search may
   traverse one adjacent node very deeply before ever going onto the immediate neighbors.
-*/
+  */
+#include "Trees_and_Graphs.h"
 
-struct Node {
-  
-};
-
-enum State {
-  Unvisited, Visited, Visiting;
-}
-
-bool breadth_first_search(Graph g, Node start, Node end) 
+bool breadth_first_search(graph g, Node start, Node end) 
 {
   // operates as Queue
   LinkedList<Node> q = new LinkedList<Node>();
