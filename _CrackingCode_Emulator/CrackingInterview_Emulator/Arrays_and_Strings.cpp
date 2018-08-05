@@ -218,3 +218,85 @@ string is_rotation(string s1, string s2)
   }
   return (yes > -1) ? "rotation" : "not rotation";
 }
+
+// Find last idx that is < checkVal
+int findIdx(vector<int>& arr, stack<int>& s, int currIdx, int checkVal) {
+	int candidate = (s.top() == INT_MAX) ? arr.size() - 1 : s.top();
+	if (currIdx < 0 || currIdx >= arr.size()) {
+		return candidate;
+	}
+	cout << "Current candidate idx:" << candidate << " val:" << arr[candidate] << endl;
+	cout << "Is arr[" << currIdx << "]=" << arr[currIdx] << " < " << checkVal << endl;
+	if (arr[currIdx] <= checkVal) {
+		if (candidate <= currIdx) {
+			s.push(currIdx);
+			cout << " UPDATING candiate idx to " << currIdx << " (val " << arr[currIdx] << endl;
+		}
+		//int next = (arr.size() - currIdx) / 2;
+		int next = 1;
+		return findIdx(arr, s, currIdx + next, checkVal);
+	}
+	else {
+		int next = (arr.size() - currIdx) / 2;
+		return findIdx(arr, s, currIdx - next, checkVal);
+	}
+}
+
+double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+	int total = nums1.size() + nums2.size();
+	bool oneMedian = (total % 2 == 1);
+	cout << "Num medians: " << ((oneMedian) ? "1" : "2") << endl;
+	int firstMedianIdx, secondMedianIdx, firstMedianVal, secondMedianVal;
+	int shiftMedIdx = 0;
+
+	//TreeNode* small;
+	//TreeNode* large;
+
+	vector<int> first;
+	vector<int> second;
+
+	if (nums1.size() < nums2.size()) {
+		firstMedianIdx = (nums2.size() / 2) - ((nums2.size() % 2 == 0) ? 1 : 0);
+		secondMedianIdx = (nums1.size() / 2) - ((nums1.size() % 2 == 0) ? 1 : 0);
+		first = nums2;
+		second = nums1;
+		//small = addToMinimalBST(nums1, 0, nums1.size()-1);
+		//large = addToMinimalBST(nums2, 0, nums2.size()-1);
+	}
+	else {
+		firstMedianIdx = (nums1.size() / 2) - ((nums1.size() % 2 == 0) ? 1 : 0);
+		secondMedianIdx = (nums2.size() / 2) - ((nums2.size() % 2 == 0) ? 1 : 0);
+		first = nums1;
+		second = nums2;
+		//small = addToMinimalBST(nums2, 0, nums2.size()-1);
+		//large = addToMinimalBST(nums1, 0, nums1.size()-1);            
+	}
+	stack<int> biggestIdxLessThanMed;
+	biggestIdxLessThanMed.push(INT_MAX);
+	shiftMedIdx = findIdx(first, biggestIdxLessThanMed, secondMedianIdx, first[firstMedianIdx]);
+	cout << "Shifting idx[" << firstMedianIdx << "] >> " << shiftMedIdx << endl;
+	cout << "New median[" << (firstMedianIdx + shiftMedIdx) << "]" << endl;
+	//cout << "SMALL TREE:" << endl;
+	//printInOrder(small);
+	//cout << endl;
+	//cout << "LARGE TREE:" << endl;
+	//printInOrder(large);
+	//cout << endl;
+
+	//TreeNode* merged = mergeTwoTrees(small, large);
+	//cout << "MERGED TREE:" << endl;
+	//printPretty(merged);
+	//cout << endl;
+
+	//cout << "small->data:" << small->data << endl;
+	//cout << "large->data:" << large->data << endl;
+
+	if (oneMedian) {
+
+	}
+	else {
+
+	}
+	return 0;
+	//return ((small->data + large->data) / 2);
+}

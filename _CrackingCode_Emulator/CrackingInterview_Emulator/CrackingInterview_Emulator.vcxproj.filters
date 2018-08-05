@@ -55,5 +55,8 @@
     <Text Include="..\tests\strings-inastring.txt">
       <Filter>tests</Filter>
     </Text>
+    <Text Include="..\tests\arrays-median.txt">
+      <Filter>tests</Filter>
+    </Text>
   </ItemGroup>
 </Project>

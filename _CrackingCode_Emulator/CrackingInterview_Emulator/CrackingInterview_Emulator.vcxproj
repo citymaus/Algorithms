@@ -96,6 +96,7 @@
     <ClInclude Include="file_handler.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="..\tests\arrays-median.txt" />
     <Text Include="..\tests\strings-compression.txt" />
     <Text Include="..\tests\strings-inastring.txt" />
     <Text Include="..\tests\strings-replace_spaces.txt" />

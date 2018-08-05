@@ -74,7 +74,6 @@
     <ClCompile Include="Arrays and Strings\Arrays - Rotate Matrix Image.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Set Zeros in Matrix.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Two Sum.cpp" />
-    <ClCompile Include="Arrays and Strings\String - Find Smallest Substring with all Alphabet Chars.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Check if String is Rotation.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Check if String is Substring.cpp" />
@@ -82,6 +81,7 @@
     <ClCompile Include="Arrays and Strings\Strings - Compress String.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Create Strings in Telephone Number.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Find First Non-repeating Character.cpp" />
+    <ClCompile Include="Arrays and Strings\Strings - Find Smallest Substring with all Alphabet Chars.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Has all Unique Chars.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Replace Spaces.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Reverse a String.cpp" />
@@ -168,6 +168,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_Headers\Arrays_and_Strings.h" />
+    <ClInclude Include="_Headers\Linked_Lists.h" />
+    <ClInclude Include="_Headers\Sorting_and_Searching.h" />
     <ClInclude Include="_Headers\Trees_and_Graphs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+#include <stack>
 using namespace std;
 
 void print_array(int arr[][100], int N);
@@ -8,3 +10,5 @@ string compression(string s);
 void rotate_image(int arr[][100], int N);
 void set_zeros(int arr[][100], int N);
 string is_rotation(string s1, string s2);
+
+double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);

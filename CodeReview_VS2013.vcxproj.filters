@@ -45,9 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Arrays and Strings\String - Find Smallest Substring with all Alphabet Chars.cpp">
-      <Filter>Source Files\Arrays and Strings</Filter>
-    </ClCompile>
     <ClCompile Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cpp">
       <Filter>Source Files\Arrays and Strings</Filter>
     </ClCompile>
@@ -324,6 +321,9 @@
     <ClCompile Include="Arrays and Strings\Arrays - Two Sum.cpp">
       <Filter>Source Files\Arrays and Strings</Filter>
     </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Find Smallest Substring with all Alphabet Chars.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cs">
@@ -340,6 +340,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="_Headers\Trees_and_Graphs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Headers\Sorting_and_Searching.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Headers\Linked_Lists.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

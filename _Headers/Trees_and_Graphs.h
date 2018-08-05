@@ -1,3 +1,6 @@
+#ifndef TREES_AND_GRAPHS_H
+#define TREES_AND_GRAPHS_H
+
 #include <cstdio>
 #include <climits>
 #include <cmath>      // abs
@@ -7,6 +10,7 @@ struct TreeNode {
 	int data;
 	struct TreeNode *left;
 	struct TreeNode *right;
+	TreeNode(int x) : data(x), left(NULL), right(NULL) {}
 };
 
 struct Node
@@ -15,6 +19,43 @@ struct Node
 	struct Node *next;
 };
 enum State { Unvisited, Visited, Visiting};
+
+template<typename Key, typename Value>
+class RedBlack
+{
+	enum Colour
+	{
+		RED,
+		BLACK
+	};
+
+	struct RedBlackNode
+	{
+		Colour colour;
+		Key key;
+		Value value;
+		RedBlackNode *parent;
+		RedBlackNode *left;
+		RedBlackNode *right;
+	};
+
+	RedBlackNode *root;
+	
+public:
+	RedBlack();
+	~RedBlack();
+	void Insert(const Key& key, const Value& value);
+	Value& Find(const Key& key);
+	void Delete(const Key& key);
+	void Dump();
+private:
+	void RotateLeft(RedBlackNode *x);
+	void RotateRight(RedBlackNode *y);
+	void Transplant(RedBlackNode *dest, RedBlackNode *src);
+	RedBlackNode *Minimum(RedBlackNode *tree);
+	void Dump(RedBlackNode *node, int tabs);
+	void DeleteNode(RedBlackNode *node);
+};
 
 #define MAXV		1000	/* maximum number of vertices */
 struct edgenode {
@@ -41,3 +82,4 @@ struct set_union {
 bool breadth_first_search(graph g, Node start, Node end);
 int Floyds_Has_Cycle(Node* head);
 */
+#endif
