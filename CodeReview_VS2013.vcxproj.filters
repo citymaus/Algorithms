@@ -324,6 +324,12 @@
     <ClCompile Include="Arrays and Strings\Strings - Find Smallest Substring with all Alphabet Chars.cpp">
       <Filter>Source Files\Arrays and Strings</Filter>
     </ClCompile>
+    <ClCompile Include="Arrays and Strings\Arrays - Find Median in two Sorted Arrays Log(n) time.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays and Strings\Strings - Longest Palindrome.cpp">
+      <Filter>Source Files\Arrays and Strings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Arrays and Strings\Strings - Check if String is Permutation of Another String.cs">

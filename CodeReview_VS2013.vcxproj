@@ -67,6 +67,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arrays and Strings\Arrays - Find a Missing Number in Arithmetic Sequence.cpp" />
+    <ClCompile Include="Arrays and Strings\Arrays - Find Median in two Sorted Arrays Log(n) time.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Find Most Popular Integer.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Largest Contiguous Sum.cpp" />
     <ClCompile Include="Arrays and Strings\Arrays - Move Zeros to End.cpp" />
@@ -83,6 +84,7 @@
     <ClCompile Include="Arrays and Strings\Strings - Find First Non-repeating Character.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Find Smallest Substring with all Alphabet Chars.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Has all Unique Chars.cpp" />
+    <ClCompile Include="Arrays and Strings\Strings - Longest Palindrome.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Replace Spaces.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Reverse a String.cpp" />
     <ClCompile Include="Arrays and Strings\Strings - Reverse Words in a String.cpp" />
